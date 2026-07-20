@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Fleet | Immar Trading</title>
+
+<meta name="description" content="Browse our fleet of premium rental vehicles. Get an instant quote and book directly through WhatsApp.">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fleet.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+<a href="index.html">
+IMMAR <span>TRADING</span>
+</a>
+</div>
+
+<button class="menu-toggle" id="menu-toggle">
+☰
+</button>
+
+<ul class="nav-links" id="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="fleet.html" class="active">Fleet</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a class="nav-book"
+href="https://wa.me/260XXXXXXXXX"
+target="_blank">
+Book Now
+</a>
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="fleet-hero">
+
+<div class="overlay"></div>
+
+<div class="fleet-hero-content">
+
+<h1>Our Vehicle Fleet</h1>
+
+<p>
+Browse our reliable fleet of executive vehicles, SUVs and luxury cars.
+Select your preferred vehicle, calculate an instant quote and book via WhatsApp.
+</p>
+
+</div>
+
+</section>
+
+<section class="fleet-gallery">
+
+<div class="section-title">
+
+<h2>Available Vehicles</h2>
+
+<p>
+Professionally maintained vehicles for business, tourism, airport transfers and family travel.
+</p>
+
+</div>
+
+<div class="fleet-grid">
+
+<!-- ===============================
+EXECUTIVE SUV
+================================ -->
+
+<div class="fleet-card">
+
+<div class="main-image">
+
+<img
+id="pajeroMain"
+src="images/pajero.jpeg"
+alt="Executive SUV">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img
+src="images/pajero.jpeg"
+onclick="changeImage('pajeroMain',this.src)"
+class="active-thumb">
+
+<img
+src="images/pajero.jpeg"
+onclick="changeImage('pajeroMain',this.src)">
+
+<img
+src="images/pajero.jpeg"
+onclick="changeImage('pajeroMain',this.src)">
+
+</div>
+
+<div class="fleet-content">
+
+<h3>Executive SUV</h3>
+
+<p>
+
+✔ Automatic Transmission<br>
+✔ Air Conditioning<br>
+✔ Leather Interior<br>
+✔ 7 Passenger Capacity<br>
+✔ Perfect for Long Distance Travel
+
+</p>
+
+<button
+
+class="selectVehicle"
+
+data-vehicle="Executive SUV">
+
+Select Vehicle
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===============================
+EXECUTIVE SEDAN
+================================ -->
+
+<div class="fleet-card">
+
+<div class="main-image">
+
+<img
+id="sedanMain"
+src="images/sedan1.jpg"
+alt="Executive Sedan">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img
+
+src="images/sedan1.jpg"
+
+onclick="changeImage('sedanMain',this.src)"
+
+class="active-thumb">
+
+<img
+
+src="images/sedan2.jpg"
+
+onclick="changeImage('sedanMain',this.src)">
+
+<img
+
+src="images/sedan3.jpg"
+
+onclick="changeImage('sedanMain',this.src)">
+
+</div>
+
+<div class="fleet-content">
+
+<h3>Executive Sedan</h3>
+
+<p>
+
+✔ Fuel Efficient<br>
+✔ Comfortable Seating<br>
+✔ Air Conditioning<br>
+✔ Bluetooth Audio<br>
+✔ Ideal for Corporate Hire
+
+</p>
+
+<button
+
+class="selectVehicle"
+
+data-vehicle="Executive Sedan">
+
+Select Vehicle
+
+</button>
+
+</div>
+
+</div>
+<!-- ===============================
+FAMILY SUV
+================================ -->
+
+<div class="fleet-card">
+
+<div class="main-image">
+
+<img
+id="familyMain"
+src="images/family1.jpg"
+alt="Family SUV">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img
+src="images/family1.jpg"
+onclick="changeImage('familyMain',this.src)"
+class="active-thumb">
+
+<img
+src="images/family2.jpg"
+onclick="changeImage('familyMain',this.src)">
+
+<img
+src="images/family3.jpg"
+onclick="changeImage('familyMain',this.src)">
+
+</div>
+
+<div class="fleet-content">
+
+<h3>Family SUV</h3>
+
+<p>
+
+✔ Spacious Interior<br>
+✔ Comfortable Ride<br>
+✔ Air Conditioning<br>
+✔ Large Luggage Space<br>
+✔ Ideal for Family Trips
+
+</p>
+
+<button
+class="selectVehicle"
+data-vehicle="Family SUV">
+
+Select Vehicle
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===============================
+DOUBLE CAB PICKUP
+================================ -->
+
+<div class="fleet-card">
+
+<div class="main-image">
+
+<img
+id="pickupMain"
+src="images/pickup1.jpg"
+alt="Double Cab Pickup">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img
+src="images/pickup1.jpg"
+onclick="changeImage('pickupMain',this.src)"
+class="active-thumb">
+
+<img
+src="images/pickup2.jpg"
+onclick="changeImage('pickupMain',this.src)">
+
+<img
+src="images/pickup3.jpg"
+onclick="changeImage('pickupMain',this.src)">
+
+</div>
+
+<div class="fleet-content">
+
+<h3>Double Cab Pickup</h3>
+
+<p>
+
+✔ 4x4 Capability<br>
+✔ Heavy Duty Suspension<br>
+✔ Large Cargo Bed<br>
+✔ Excellent for Mining Sites
+
+</p>
+
+<button
+class="selectVehicle"
+data-vehicle="Double Cab Pickup">
+
+Select Vehicle
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===============================
+MINIBUS
+================================ -->
+
+<div class="fleet-card">
+
+<div class="main-image">
+
+<img
+id="busMain"
+src="images/bus1.jpg"
+alt="Minibus">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img
+src="images/bus1.jpg"
+onclick="changeImage('busMain',this.src)"
+class="active-thumb">
+
+<img
+src="images/bus2.jpg"
+onclick="changeImage('busMain',this.src)">
+
+<img
+src="images/bus3.jpg"
+onclick="changeImage('busMain',this.src)">
+
+</div>
+
+<div class="fleet-content">
+
+<h3>Passenger Minibus</h3>
+
+<p>
+
+✔ 14–16 Seater<br>
+✔ Air Conditioning<br>
+✔ Comfortable Seating<br>
+✔ Group Transport
+
+</p>
+
+<button
+class="selectVehicle"
+data-vehicle="Passenger Minibus">
+
+Select Vehicle
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ===============================
+LUXURY SUV
+================================ -->
+
+<div class="fleet-card">
+
+<div class="main-image">
+
+<img
+id="luxuryMain"
+src="images/luxury1.jpg"
+alt="Luxury SUV">
+
+</div>
+
+<div class="thumbnail-row">
+
+<img
+src="images/luxury1.jpg"
+onclick="changeImage('luxuryMain',this.src)"
+class="active-thumb">
+
+<img
+src="images/luxury2.jpg"
+onclick="changeImage('luxuryMain',this.src)">
+
+<img
+src="images/luxury3.jpg"
+onclick="changeImage('luxuryMain',this.src)">
+
+</div>
+
+<div class="fleet-content">
+
+<h3>Luxury SUV</h3>
+
+<p>
+
+✔ Premium Interior<br>
+✔ Leather Seats<br>
+✔ Executive Comfort<br>
+✔ VIP Transport
+
+</p>
+
+<button
+class="selectVehicle"
+data-vehicle="Luxury SUV">
+
+Select Vehicle
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================
+INSTANT QUOTE CALCULATOR
+====================================== -->
+
+<section class="quote-section">
+
+<div class="quote-container">
+
+<h2>Instant Rental Quote</h2>
+
+<p>
+Select your vehicle, choose your trip type and number of days.
+</p>
+
+<label>
+
+Vehicle
+
+</label>
+
+<select id="vehicleSelect">
+
+<option>Executive SUV</option>
+<option>Executive Sedan</option>
+<option>Family SUV</option>
+<option>Double Cab Pickup</option>
+<option>Passenger Minibus</option>
+<option>Luxury SUV</option>
+
+</select>
+
+<label>
+
+Hire Type
+
+</label>
+
+<select id="hireType">
+
+<option value="local">
+Local Hire
+</option>
+
+<option value="intercity">
+Intercity Hire
+</option>
+
+</select>
+
+<label>
+
+Number of Days
+
+</label>
+
+<input
+type="number"
+id="days"
+min="1"
+value="1">
+
+<button
+id="calculateQuote">
+
+Calculate Quote
+
+</button>
+
+<div class="quote-output">
+
+<h3>
+
+Estimated Total
+
+</h3>
+
+<h1 id="totalPrice">
+
+ZMW 500
+
+</h1>
+
+<p id="summary">
+
+1 Day Local Hire
+
+</p>
+
+<a
+id="bookWhatsapp"
+target="_blank"
+class="quoteButton">
+
+Book via WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<h3>IMMAR TRADING</h3>
+
+<p>
+
+Reliable vehicle hire solutions across Zambia.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<a href="index.html">Home</a><br>
+<a href="fleet.html">Fleet</a><br>
+<a href="services.html">Services</a><br>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div>
+
+<h4>Contact</h4>
+
+<p>📞 +260 XXX XXX XXX</p>
+
+<p>✉ info@immartrading.com</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Immar Trading. All Rights Reserved.
+
+</div>
+
+</footer>
+
+<a
+href="https://wa.me/260XXXXXXXXX"
+class="whatsapp"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+<script src="js/script.js"></script>
+<script src="js/fleet.js"></script>
+
+</body>
+
+</html>
