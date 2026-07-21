@@ -67,29 +67,29 @@ const vehicleRates = {
 
     "Executive Sedan":{
 
-        local:500,
-        intercity:1200
+        local:850,
+        intercity:1600
 
     },
 
     "Executive SUV":{
 
-        local:700,
-        intercity:1500
+        local:1500,
+        intercity:2100
 
     },
 
     "Family SUV":{
 
-        local:650,
-        intercity:1400
+        local:1100,
+        intercity:1600
 
     },
 
     "Double Cab Pickup":{
 
-        local:800,
-        intercity:1800
+        local:2500,
+        intercity:3500
 
     },
 
@@ -102,8 +102,8 @@ const vehicleRates = {
 
     "Luxury SUV":{
 
-        local:1000,
-        intercity:2000
+        local:1500,
+        intercity:2100
 
     }
 
