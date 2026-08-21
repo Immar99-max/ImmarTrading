@@ -100,7 +100,7 @@ const vehicleRates = {
 
     },
 
-    "Luxury SUV":{
+    "Budget Friendly":{
 
         local:1500,
         intercity:2100
@@ -181,7 +181,7 @@ Thank you.`;
 
     whatsapp.href =
 
-    "https://wa.me/260977123456?text=" +
+    "https://wa.me/+260973188676?text=" +
 
     encodeURIComponent(message);
 
