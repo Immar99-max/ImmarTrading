@@ -1,453 +1,898 @@
 /* ==========================================
    IMMAR TRADING - FLEET PAGE
-   PART 1
+   COMPLETE FLEET.JS
 ========================================== */
+
 
 /* ==========================================
-   CHANGE MAIN IMAGE
+   PAGE ELEMENTS
 ========================================== */
 
-function changeImage(imageId, imageSrc){
+const vehicleSelect =
+document.getElementById("vehicleSelect");
 
-    const mainImage = document.getElementById(imageId);
+const hireType =
+document.getElementById("hireType");
 
-    if(mainImage){
+const days =
+document.getElementById("days");
 
-        mainImage.src = imageSrc;
+const totalPrice =
+document.getElementById("totalPrice");
 
-    }
+const summary =
+document.getElementById("summary");
 
-}
+const whatsapp =
+document.getElementById("bookWhatsapp");
 
-/* ==========================================
-   GET PAGE ELEMENTS
-========================================== */
+const calculateButton =
+document.getElementById("calculateQuote");
 
-const vehicleSelect = document.getElementById("vehicleSelect");
+const decreaseDays =
+document.getElementById("decreaseDays");
 
-const hireType = document.getElementById("hireType");
+const increaseDays =
+document.getElementById("increaseDays");
 
-const days = document.getElementById("days");
-
-const totalPrice = document.getElementById("totalPrice");
-
-const summary = document.getElementById("summary");
-
-const whatsapp = document.getElementById("bookWhatsapp");
-
-const calculateButton = document.getElementById("calculateQuote");
-
-/* ==========================================
-   VEHICLE SELECTION
-========================================== */
-
-document.querySelectorAll(".selectVehicle").forEach(button=>{
-
-    button.addEventListener("click",()=>{
-
-        vehicleSelect.value = button.dataset.vehicle;
-
-        document.querySelector(".quote-section").scrollIntoView({
-
-            behavior:"smooth"
-
-        });
-
-        calculateQuote();
-
-    });
-
-});
 
 /* ==========================================
    VEHICLE PRICING
 ========================================== */
 
+/*
+   You can change any of these rates later.
+
+   local      = local daily rate
+   intercity  = intercity daily rate
+*/
+
 const vehicleRates = {
 
     "Executive Sedan":{
-
-        local:850,
-        intercity:1600
-
+        local:500,
+        intercity:1200
     },
 
     "Executive SUV":{
-
-        local:1500,
-        intercity:2100
-
+        local:700,
+        intercity:1500
     },
 
     "Family SUV":{
-
-        local:1100,
-        intercity:1600
-
+        local:650,
+        intercity:1400
     },
 
     "Double Cab Pickup":{
-
-        local:2500,
-        intercity:3500
-
+        local:800,
+        intercity:1800
     },
 
     "Passenger Minibus":{
-
         local:1500,
         intercity:2500
-
     },
 
     "Budget Friendly":{
-
-        local:1500,
-        intercity:2100
-
+        local:500,
+        intercity:1200
     }
 
 };
 
+
 /* ==========================================
-   CALCULATE QUOTE
+   IMAGE GALLERY
+========================================== */
+
+/*
+   Called directly by the thumbnail buttons
+   inside fleet.html.
+
+   Example:
+
+   changeImage(
+       'familyMain',
+       'familysuv2.jpeg',
+       this
+   );
+*/
+
+function changeImage(
+    imageId,
+    imageSrc,
+    button
+){
+
+    const mainImage =
+    document.getElementById(imageId);
+
+
+    if(!mainImage){
+        return;
+    }
+
+
+    /*
+       Fade image slightly while changing.
+    */
+
+    mainImage.style.opacity = "0";
+
+
+    setTimeout(()=>{
+
+        mainImage.src = imageSrc;
+
+        mainImage.style.opacity = "1";
+
+    },150);
+
+
+    /*
+       Update active thumbnail.
+    */
+
+    if(button){
+
+        const thumbnailRow =
+        button.closest(".thumbnail-row");
+
+
+        if(thumbnailRow){
+
+            thumbnailRow
+            .querySelectorAll(".thumbnail-button")
+            .forEach(thumbnail=>{
+
+                thumbnail
+                .classList
+                .remove("active-thumb");
+
+            });
+
+
+            button
+            .classList
+            .add("active-thumb");
+
+        }
+
+    }
+
+}
+
+
+/* ==========================================
+   IMAGE TRANSITION
+========================================== */
+
+document
+.querySelectorAll(".vehicle-main-image")
+.forEach(image=>{
+
+    image.style.transition =
+    "opacity .2s ease";
+
+});
+
+
+/* ==========================================
+   FORMAT HIRE TYPE
+========================================== */
+
+function getHireLabel(hire){
+
+    if(hire === "local"){
+
+        return "Local Hire";
+
+    }
+
+    if(hire === "intercity"){
+
+        return "Intercity Hire";
+
+    }
+
+    return hire;
+
+}
+
+
+/* ==========================================
+   QUOTE CALCULATOR
 ========================================== */
 
 function calculateQuote(){
 
-    const vehicle = vehicleSelect.value;
+    if(
+        !vehicleSelect ||
+        !hireType ||
+        !days ||
+        !totalPrice ||
+        !summary
+    ){
+        return;
+    }
 
-    const hire = hireType.value;
 
-    let bookingDays = parseInt(days.value);
+    const vehicle =
+    vehicleSelect.value;
 
-    if(isNaN(bookingDays) || bookingDays < 1){
 
-        bookingDays = 1;
+    const hire =
+    hireType.value;
 
-        days.value = 1;
+
+    /*
+       IMPORTANT:
+
+       Do NOT automatically replace an empty
+       field with 1 here.
+
+       When somebody deletes "1" to type "2",
+       the input is temporarily empty.
+
+       Resetting it immediately was the reason
+       users could not type another number.
+    */
+
+    const bookingDays =
+    parseInt(days.value,10);
+
+
+    if(
+        Number.isNaN(bookingDays) ||
+        bookingDays < 1
+    ){
+
+        return;
 
     }
 
-    let dailyRate;
 
-    if(hire === "local"){
+    const rates =
+    vehicleRates[vehicle];
 
-        dailyRate = vehicleRates[vehicle].local;
 
-    }else{
+    if(!rates){
 
-        dailyRate = vehicleRates[vehicle].intercity;
+        console.warn(
+            "No rental pricing configured for:",
+            vehicle
+        );
+
+        return;
 
     }
 
-    const total = dailyRate * bookingDays;
+
+    const dailyRate =
+    hire === "intercity"
+    ? rates.intercity
+    : rates.local;
+
+
+    const total =
+    dailyRate * bookingDays;
+
+
+    /*
+       Update price.
+    */
 
     totalPrice.textContent =
+    `ZMW ${total.toLocaleString()}`;
 
-    "ZMW " + total.toLocaleString();
+
+    /*
+       Quote summary.
+    */
+
+    const hireLabel =
+    getHireLabel(hire);
+
 
     summary.innerHTML = `
 
-        <strong>${vehicle}</strong><br><br>
+        <strong>
+            ${vehicle}
+        </strong>
 
-        Hire Type: ${hire.charAt(0).toUpperCase() + hire.slice(1)}<br>
+        <br><br>
 
-        Daily Rate: ZMW ${dailyRate.toLocaleString()}<br>
+        Hire Type:
+        ${hireLabel}
 
-        Duration: ${bookingDays} Day(s)<br>
+        <br>
 
-        <strong>Total: ZMW ${total.toLocaleString()}</strong>
+        Daily Rate:
+        ZMW ${dailyRate.toLocaleString()}
+
+        <br>
+
+        Duration:
+        ${bookingDays}
+        ${bookingDays === 1 ? "Day" : "Days"}
+
+        <br>
+
+        <strong>
+            Estimated Total:
+            ZMW ${total.toLocaleString()}
+        </strong>
 
     `;
 
-    const message =
 
-`Hello Immar Trading,
+    /*
+       WhatsApp booking message.
+    */
 
-I would like to hire the ${vehicle}.
+    const whatsappMessage =
 
-Hire Type: ${hire.charAt(0).toUpperCase() + hire.slice(1)}
+`Hello IMMAR TRADING,
 
+I would like to enquire about hiring a vehicle.
+
+Vehicle: ${vehicle}
+Hire Type: ${hireLabel}
 Daily Rate: ZMW ${dailyRate.toLocaleString()}
-
-Duration: ${bookingDays} day(s)
-
+Duration: ${bookingDays} ${bookingDays === 1 ? "day" : "days"}
 Estimated Total: ZMW ${total.toLocaleString()}
 
-Please confirm availability.
+Please confirm vehicle availability and the final rental quotation.
 
 Thank you.`;
 
-    whatsapp.href =
 
-    "https://wa.me/+260973188676?text=" +
+    /*
+       Update WhatsApp booking link.
+    */
 
-    encodeURIComponent(message);
+    if(whatsapp){
+
+        whatsapp.href =
+
+        "https://wa.me/260973188676?text=" +
+
+        encodeURIComponent(
+            whatsappMessage
+        );
+
+    }
 
 }
-/* ==========================================
-   PART 2
-   EVENTS + INTERACTIONS
-========================================== */
 
 
 /* ==========================================
-   CALCULATOR EVENTS
+   CALCULATE BUTTON
 ========================================== */
-
 
 if(calculateButton){
 
-    calculateButton.addEventListener("click",()=>{
-
-        calculateQuote();
-
-    });
+    calculateButton
+    .addEventListener(
+        "click",
+        calculateQuote
+    );
 
 }
 
 
+/* ==========================================
+   VEHICLE DROPDOWN
+========================================== */
 
 if(vehicleSelect){
 
-    vehicleSelect.addEventListener("change",()=>{
-
-        calculateQuote();
-
-    });
+    vehicleSelect
+    .addEventListener(
+        "change",
+        calculateQuote
+    );
 
 }
 
 
+/* ==========================================
+   HIRE TYPE DROPDOWN
+========================================== */
 
 if(hireType){
 
-    hireType.addEventListener("change",()=>{
-
-        calculateQuote();
-
-    });
+    hireType
+    .addEventListener(
+        "change",
+        calculateQuote
+    );
 
 }
 
 
+/* ==========================================
+   DAYS - MANUAL TYPING
+========================================== */
 
 if(days){
 
-    days.addEventListener("input",()=>{
+    /*
+       While typing:
 
-        calculateQuote();
+       Allow blank field temporarily.
 
-    });
+       This lets the user delete "1"
+       and type "2", "5", "10", etc.
+    */
 
-}
+    days.addEventListener(
+        "input",
+        ()=>{
 
+            if(days.value === ""){
 
+                return;
 
-/* ==========================================
-   INITIAL QUOTE LOAD
-========================================== */
-
-
-if(vehicleSelect && hireType && days){
-
-    calculateQuote();
-
-}
+            }
 
 
-
-/* ==========================================
-   THUMBNAIL ACTIVE STATE
-========================================== */
+            let value =
+            parseInt(days.value,10);
 
 
-document
-.querySelectorAll(".thumbnail-row img")
-.forEach(image=>{
+            if(Number.isNaN(value)){
+
+                return;
+
+            }
 
 
-    image.addEventListener("click",function(){
+            /*
+               Do not allow negative numbers.
+            */
+
+            if(value < 1){
+
+                return;
+
+            }
 
 
-        const thumbnailGroup =
-        this.parentElement;
+            /*
+               Maximum 365 days.
+            */
+
+            if(value > 365){
+
+                days.value = 365;
+
+            }
 
 
-        thumbnailGroup
-        .querySelectorAll("img")
-        .forEach(img=>{
-
-
-            img.classList.remove(
-                "active-thumb"
-            );
-
-
-        });
-
-
-
-        this.classList.add(
-            "active-thumb"
-        );
-
-
-    });
-
-
-});
-
-
-
-/* ==========================================
-   VEHICLE CARD ANIMATION
-========================================== */
-
-
-const fleetCards =
-document.querySelectorAll(".fleet-card");
-
-
-
-if(
-"IntersectionObserver" in window
-){
-
-
-const cardObserver =
-
-new IntersectionObserver((entries)=>{
-
-
-    entries.forEach(entry=>{
-
-
-        if(entry.isIntersecting){
-
-
-            entry.target.style.opacity="1";
-
-
-            entry.target.style.transform=
-            "translateY(0)";
-
-
-            cardObserver.unobserve(
-                entry.target
-            );
-
+            calculateQuote();
 
         }
+    );
 
 
-    });
+    /*
+       Validate once user finishes
+       editing the field.
+    */
+
+    days.addEventListener(
+        "blur",
+        ()=>{
+
+            let value =
+            parseInt(days.value,10);
 
 
-},{
+            if(
+                Number.isNaN(value) ||
+                value < 1
+            ){
 
-    threshold:0.15
+                value = 1;
 
-});
-
-
-
-fleetCards.forEach(card=>{
-
-
-    card.style.opacity="0";
+            }
 
 
-    card.style.transform=
-    "translateY(40px)";
+            if(value > 365){
+
+                value = 365;
+
+            }
 
 
-    card.style.transition=
-    "all .6s ease";
+            days.value = value;
 
 
-    cardObserver.observe(card);
+            calculateQuote();
+
+        }
+    );
 
 
-});
+    /*
+       Press Enter to calculate.
+    */
 
+    days.addEventListener(
+        "keydown",
+        event=>{
 
+            if(event.key === "Enter"){
 
-}else{
+                event.preventDefault();
 
+                calculateQuote();
 
-    fleetCards.forEach(card=>{
+            }
 
-
-        card.style.opacity="1";
-
-
-    });
-
+        }
+    );
 
 }
 
 
-
 /* ==========================================
-   UPDATE QUOTE WHEN VEHICLE BUTTON CLICKED
+   MINUS BUTTON
 ========================================== */
 
+if(
+    decreaseDays &&
+    days
+){
+
+    decreaseDays
+    .addEventListener(
+        "click",
+        ()=>{
+
+            let value =
+            parseInt(days.value,10);
+
+
+            if(Number.isNaN(value)){
+
+                value = 1;
+
+            }
+
+
+            value =
+            Math.max(
+                1,
+                value - 1
+            );
+
+
+            days.value = value;
+
+
+            calculateQuote();
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   PLUS BUTTON
+========================================== */
+
+if(
+    increaseDays &&
+    days
+){
+
+    increaseDays
+    .addEventListener(
+        "click",
+        ()=>{
+
+            let value =
+            parseInt(days.value,10);
+
+
+            if(Number.isNaN(value)){
+
+                value = 1;
+
+            }
+
+
+            value =
+            Math.min(
+                365,
+                value + 1
+            );
+
+
+            days.value = value;
+
+
+            calculateQuote();
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   SELECT VEHICLE BUTTONS
+========================================== */
 
 document
 .querySelectorAll(".selectVehicle")
 .forEach(button=>{
 
+    button.addEventListener(
+        "click",
+        ()=>{
 
-    button.addEventListener("click",()=>{
+            if(!vehicleSelect){
+                return;
+            }
 
 
-        if(vehicleSelect){
+            const selectedVehicle =
+            button.dataset.vehicle;
 
 
             vehicleSelect.value =
-            button.dataset.vehicle;
+            selectedVehicle;
 
+
+            /*
+               Recalculate immediately.
+            */
+
+            calculateQuote();
+
+
+            /*
+               Scroll customer to calculator.
+            */
+
+            const quoteSection =
+            document.getElementById(
+                "instantQuote"
+            );
+
+
+            if(quoteSection){
+
+                quoteSection
+                .scrollIntoView({
+
+                    behavior:"smooth",
+
+                    block:"start"
+
+                });
+
+            }
+
+
+            /*
+               Visual feedback on button.
+            */
+
+            const originalText =
+            button.textContent;
+
+
+            button.textContent =
+            "Vehicle Selected ✓";
+
+
+            button.classList.add(
+                "vehicle-selected"
+            );
+
+
+            setTimeout(()=>{
+
+                button.textContent =
+                originalText;
+
+
+                button.classList.remove(
+                    "vehicle-selected"
+                );
+
+            },1800);
+
+        }
+    );
+
+});
+
+
+/* ==========================================
+   THUMBNAIL KEYBOARD SUPPORT
+========================================== */
+
+document
+.querySelectorAll(".thumbnail-button")
+.forEach(button=>{
+
+    button.addEventListener(
+        "keydown",
+        event=>{
+
+            if(
+                event.key === "Enter" ||
+                event.key === " "
+            ){
+
+                /*
+                   onclick already handles
+                   the actual image switch.
+                */
+
+                event.preventDefault();
+
+                button.click();
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ==========================================
+   BROKEN IMAGE CHECK
+========================================== */
+
+document
+.querySelectorAll(
+    ".vehicle-main-image, .thumbnail-button img"
+)
+.forEach(image=>{
+
+    image.addEventListener(
+        "error",
+        ()=>{
+
+            console.warn(
+                "Vehicle image could not be loaded:",
+                image.getAttribute("src")
+            );
+
+        }
+    );
+
+});
+
+
+/* ==========================================
+   OPTIONAL CARD ANIMATION
+========================================== */
+
+const fleetCards =
+document.querySelectorAll(
+    ".fleet-card"
+);
+
+
+if(
+    "IntersectionObserver" in window
+){
+
+    const cardObserver =
+
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(
+                entry=>{
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+                        entry.target
+                        .classList
+                        .add(
+                            "fleet-card-visible"
+                        );
+
+
+                        cardObserver
+                        .unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold:0.12
+        }
+
+    );
+
+
+    fleetCards
+    .forEach(card=>{
+
+        card.classList.add(
+            "fleet-card-hidden"
+        );
+
+        cardObserver.observe(
+            card
+        );
+
+    });
+
+}
+else{
+
+    fleetCards
+    .forEach(card=>{
+
+        card.classList.add(
+            "fleet-card-visible"
+        );
+
+    });
+
+}
+
+
+/* ==========================================
+   INITIAL QUOTE
+========================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    ()=>{
+
+        /*
+           Ensure initial Days value is valid.
+        */
+
+        if(days){
+
+            const initialDays =
+            parseInt(days.value,10);
+
+
+            if(
+                Number.isNaN(initialDays) ||
+                initialDays < 1
+            ){
+
+                days.value = 1;
+
+            }
 
         }
 
 
+        /*
+           Generate first quote immediately.
+        */
+
         calculateQuote();
 
-
-
-    });
-
-
-});
-
-
-
-/* ==========================================
-   IMAGE PRELOAD CHECK
-========================================== */
-
-
-document
-.querySelectorAll(".main-image img")
-.forEach(image=>{
-
-
-    image.addEventListener("error",()=>{
-
-
-        console.warn(
-        "Image failed to load:",
-        image.src
-        );
-
-
-    });
-
-
-});
-
+    }
+);
 
 
 /* ==========================================
