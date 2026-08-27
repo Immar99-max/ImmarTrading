@@ -1,753 +1,1527 @@
-/* =========================
-   IMMAR TRADING WEBSITE CSS
-========================= */
+/* ==========================================
+   IMMAR TRADING - GLOBAL / HOME PAGE CSS
+========================================== */
 
+:root{
+    --blue1:#0b3c8a;
+    --blue2:#1e73d8;
+    --blue3:#4fa3ff;
+
+    --white:#ffffff;
+    --light:#f5f7fb;
+    --light2:#edf4ff;
+
+    --dark:#172033;
+    --grey:#667085;
+
+    --green:#25D366;
+    --gold:#c5a334;
+
+    --shadow:0 12px 35px rgba(0,0,0,.09);
+}
+
+
+/* ==========================================
+   GLOBAL
+========================================== */
 
 *{
-    margin:0;
-    padding:0;
     box-sizing:border-box;
 }
 
-
-:root{
-
-    --primary:#0b3c8a;
-    --secondary:#1e73d8;
-    --gold:#c5a334;
-    --dark:#111;
-    --grey:#666;
-    --light:#f5f7fb;
-    --white:#ffffff;
-
+html{
+    scroll-behavior:smooth;
 }
-
-
 
 body{
-
+    margin:0;
     font-family:'Poppins',sans-serif;
     color:#222;
-    background:white;
-    line-height:1.6;
-
+    background:var(--light);
 }
-
 
 a{
-
     text-decoration:none;
-    color:inherit;
-
 }
-
-
 
 img{
-
-    width:100%;
+    max-width:100%;
     display:block;
-
 }
 
 
+/* ==========================================
+   HOME HEADER
+========================================== */
 
+.home-page-header{
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1) 0%,
+        var(--blue2) 62%,
+        var(--blue3) 100%
+    );
 
+    color:white;
 
-
-
-/* =========================
-NAVIGATION
-========================= */
-
-
-header{
-
-    position:relative;
-    width:100%;
-    background:white;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-    z-index:1000;
-
+    padding:18px 22px 80px;
 }
 
 
+/* ==========================================
+   HOME NAVIGATION
+========================================== */
 
-.navbar{
-
-    max-width:1200px;
+.home-navbar{
+    max-width:1250px;
     margin:auto;
-    padding:20px;
+
     display:flex;
+    align-items:center;
     justify-content:space-between;
-    align-items:center;
 
+    position:relative;
 }
 
-.logo img{
 
-    height:85px;
+.home-brand a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:white;
+}
+
+
+.home-brand img{
+    height:75px;
     width:auto;
-    display:block;
-
-}
-
-@media(max-width:900px){
-
-.logo img{
-
-    height:60px;
-
-}
-
-}
-
-.logo a{
-
-    font-size:28px;
-    font-weight:700;
-    color:var(--primary);
-
+    object-fit:contain;
 }
 
 
-.logo span{
-
-    color:var(--gold);
-
-}
-
-
-
-.nav-links{
-
+.home-brand-text{
     display:flex;
-    list-style:none;
-    gap:30px;
-    align-items:center;
-
+    flex-direction:column;
 }
 
 
-
-.nav-links a{
-
-    font-weight:500;
-    transition:.3s;
-
-}
-
-
-
-.nav-links a:hover{
-
-    color:var(--primary);
-
-}
-
-
-
-.nav-book{
-
-    background:var(--primary);
-    color:white!important;
-    padding:10px 25px;
-    border-radius:30px;
-
-}
-
-
-
-.menu-toggle{
-
-    display:none;
-    font-size:28px;
-    background:none;
-    border:none;
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-HERO
-========================= */
-
-
-.hero{
-
-    height:85vh;
-    background:url("../images/hero-car.jpg");
-    background-size:cover;
-    background-position:center;
-    position:relative;
-    display:flex;
-    align-items:center;
-
-}
-
-
-
-.hero-overlay{
-
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.55);
-
-}
-
-
-
-.hero-content{
-
-    position:relative;
-    max-width:1200px;
-    padding:20px;
-    margin:auto;
-    color:white;
-
-}
-
-
-
-.hero h1{
-
-    font-size:55px;
-    line-height:1.2;
-    margin-bottom:20px;
-
-}
-
-
-
-.hero p{
-
-    max-width:600px;
+.home-brand-text strong{
     font-size:18px;
-    margin-bottom:35px;
-
+    line-height:1.2;
 }
 
 
+.home-brand-text span{
+    margin-top:3px;
+    color:#e5efff;
+    font-size:11px;
+}
 
-.hero-buttons{
 
+/* NAV LINKS */
+
+.home-navbar .nav-links{
     display:flex;
-    gap:20px;
-
-}
-
-
-
-.btn{
-
-    padding:14px 35px;
-    border-radius:35px;
-    display:inline-block;
-    font-weight:600;
-    transition:.3s;
-
-}
-
-
-
-.primary{
-
-    background:var(--gold);
-    color:white;
-
-}
-
-
-
-.primary:hover{
-
-    background:#a88b20;
-
-}
-
-
-
-.secondary{
-
-    border:2px solid white;
-    color:white;
-
-}
-
-
-
-.secondary:hover{
-
-    background:white;
-    color:#111;
-
-}
-
-
-
-
-
-
-
-/* =========================
-SECTION GENERAL
-========================= */
-
-
-section{
-
-    padding:80px 20px;
-
-}
-
-
-
-.section-title{
-
-    text-align:center;
-    max-width:700px;
-    margin:0 auto 50px;
-
-}
-
-
-
-.section-title h2{
-
-    font-size:36px;
-    color:var(--primary);
-    margin-bottom:15px;
-
-}
-
-
-
-.section-title p{
-
-    color:var(--grey);
-
-}
-
-
-
-
-
-
-
-/* =========================
-FLEET
-========================= */
-
-
-.vehicle-grid{
-
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-
-}
-
-
-
-.vehicle-card{
-
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
-    transition:.3s;
-
-}
-
-
-
-.vehicle-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-
-
-.vehicle-card img{
-
-    height:240px;
-    object-fit:cover;
-
-}
-
-
-
-.vehicle-info{
-
-    padding:25px;
-
-}
-
-
-
-.vehicle-info h3{
-
-    color:var(--primary);
-    margin-bottom:10px;
-
-}
-
-
-
-.vehicle-info p{
-
-    color:var(--grey);
-    margin-bottom:20px;
-
-}
-
-
-
-.vehicle-info a{
-
-    background:var(--primary);
-    color:white;
-    padding:10px 20px;
-    border-radius:25px;
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-WHY CHOOSE US
-========================= */
-
-
-.why{
-
-    background:var(--light);
-
-}
-
-
-
-.features{
-
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+    align-items:center;
     gap:25px;
 
+    list-style:none;
+
+    margin:0;
+    padding:0;
 }
 
 
+.home-navbar .nav-links li{
+    list-style:none;
+}
 
-.feature{
 
+.home-navbar .nav-links a{
+    color:white;
+
+    font-size:14px;
+    font-weight:600;
+
+    opacity:.92;
+
+    transition:.3s;
+}
+
+
+.home-navbar .nav-links a:hover{
+    opacity:1;
+}
+
+
+.home-navbar .nav-links a.active{
+    border-bottom:2px solid white;
+    padding-bottom:5px;
+}
+
+
+/* BOOK BUTTON */
+
+.home-navbar .nav-book{
     background:white;
-    padding:30px;
-    border-radius:15px;
-    text-align:center;
 
+    color:var(--blue1) !important;
+
+    padding:11px 22px;
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
 }
 
 
-
-.feature h3{
-
-    color:var(--primary);
-    margin-bottom:15px;
-
+.home-navbar .nav-book:hover{
+    transform:translateY(-2px);
 }
 
 
+/* MOBILE MENU BUTTON */
 
-.feature p{
+.menu-toggle{
+    display:none;
+
+    border:none;
+    background:transparent;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+}
+
+
+/* ==========================================
+   HOME HERO
+========================================== */
+
+.home-hero{
+    max-width:1250px;
+
+    margin:70px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+
+.home-hero-content{
+    max-width:650px;
+}
+
+
+.home-hero-tag{
+    display:inline-block;
+
+    margin-bottom:17px;
+
+    padding:8px 17px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.14);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:1.4px;
+}
+
+
+.home-hero h1{
+    margin:0 0 20px;
+
+    font-size:54px;
+    line-height:1.12;
+}
+
+
+.home-hero p{
+    max-width:620px;
+
+    margin:0;
+
+    color:#e8f2ff;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+
+/* HERO BUTTONS */
+
+.home-hero-buttons{
+    display:flex;
+
+    gap:14px;
+
+    margin-top:30px;
+
+    flex-wrap:wrap;
+}
+
+
+.home-primary-btn,
+.home-secondary-btn{
+    display:inline-block;
+
+    padding:14px 28px;
+
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+
+.home-primary-btn{
+    background:white;
+    color:var(--blue1);
+}
+
+
+.home-secondary-btn{
+    border:1px solid rgba(255,255,255,.7);
+    color:white;
+}
+
+
+.home-primary-btn:hover,
+.home-secondary-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+.home-secondary-btn:hover{
+    background:white;
+    color:var(--blue1);
+}
+
+
+/* ==========================================
+   HERO IMAGE
+========================================== */
+
+.home-hero-image{
+    position:relative;
+}
+
+
+.home-hero-image > img{
+    width:100%;
+    height:430px;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.20);
+}
+
+
+.home-image-badge{
+    position:absolute;
+
+    left:25px;
+    bottom:25px;
+
+    padding:18px 20px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.95);
+
+    color:var(--blue1);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+
+.home-image-badge strong{
+    display:block;
+
+    font-size:15px;
+}
+
+
+.home-image-badge span{
+    display:block;
+
+    margin-top:3px;
 
     color:var(--grey);
 
+    font-size:11px;
 }
 
 
+/* ==========================================
+   COMMON SECTION HEADING
+========================================== */
 
+.section-heading{
+    max-width:760px;
 
+    margin:0 auto 50px;
 
-
-
-
-/* =========================
-TESTIMONIALS
-========================= */
-
-
-.testimonial-grid{
-
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-
-}
-
-
-
-.testimonial{
-
-    background:#fff;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
-
-}
-
-
-
-.testimonial p{
-
-    font-style:italic;
-    color:#555;
-
-}
-
-
-
-.testimonial h4{
-
-    margin-top:20px;
-    color:var(--primary);
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-CTA
-========================= */
-
-
-.cta{
-
-    background:var(--primary);
-    color:white;
     text-align:center;
-
 }
 
 
+.section-label{
+    display:inline-block;
 
-.cta h2{
+    color:var(--blue2);
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:1.6px;
+}
+
+
+.section-heading h2{
+    margin:6px 0 12px;
+
+    color:var(--blue1);
+
+    font-size:38px;
+}
+
+
+.section-heading p{
+    margin:0;
+
+    color:var(--grey);
+
+    font-size:15px;
+    line-height:1.8;
+}
+
+
+/* ==========================================
+   SERVICES
+========================================== */
+
+.home-services{
+    padding:90px 22px;
+
+    background:white;
+}
+
+
+.home-services-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+}
+
+
+.home-service-card{
+    padding:30px 24px;
+
+    border-radius:17px;
+
+    background:#f8faff;
+
+    border:1px solid #e7edf6;
+
+    transition:.35s;
+}
+
+
+.home-service-card:hover{
+    transform:translateY(-7px);
+
+    background:white;
+
+    box-shadow:var(--shadow);
+}
+
+
+.home-service-icon{
+    width:58px;
+    height:58px;
+
+    object-fit:contain;
+
+    margin-bottom:18px;
+}
+
+
+.home-service-card h3{
+    margin:0 0 10px;
+
+    color:var(--blue1);
+
+    font-size:18px;
+}
+
+
+.home-service-card p{
+    margin:0 0 18px;
+
+    color:var(--grey);
+
+    font-size:13px;
+    line-height:1.75;
+}
+
+
+.home-service-card a{
+    color:var(--blue2);
+
+    font-size:13px;
+    font-weight:700;
+}
+
+
+/* ==========================================
+   FEATURED FLEET
+========================================== */
+
+.featured-fleet{
+    padding:90px 22px;
+
+    background:var(--light);
+}
+
+
+.featured-grid{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
+}
+
+
+.featured-card{
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+}
+
+
+.featured-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.13);
+}
+
+
+.featured-image{
+    position:relative;
+
+    height:245px;
+
+    overflow:hidden;
+}
+
+
+.featured-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+
+.featured-card:hover .featured-image img{
+    transform:scale(1.04);
+}
+
+
+.featured-image span{
+    position:absolute;
+
+    top:16px;
+    right:16px;
+
+    padding:6px 12px;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:var(--blue1);
+
+    font-size:10px;
+    font-weight:700;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.10);
+}
+
+
+.featured-content{
+    padding:25px;
+}
+
+
+.featured-content h3{
+    margin:0 0 10px;
+
+    color:var(--blue1);
+
+    font-size:22px;
+}
+
+
+.featured-content p{
+    margin:0 0 16px;
+
+    color:var(--grey);
+
+    font-size:13px;
+    line-height:1.75;
+}
+
+
+.featured-content ul{
+    padding:0;
+
+    margin:0 0 20px;
+
+    list-style:none;
+}
+
+
+.featured-content li{
+    position:relative;
+
+    margin:8px 0;
+
+    padding-left:20px;
+
+    color:#4f5967;
+
+    font-size:12px;
+}
+
+
+.featured-content li::before{
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--blue2);
+
+    font-weight:700;
+}
+
+
+.featured-content a{
+    color:var(--blue2);
+
+    font-size:13px;
+    font-weight:700;
+}
+
+
+.featured-action{
+    margin-top:40px;
+
+    text-align:center;
+}
+
+
+.featured-action a{
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1),
+        var(--blue2)
+    );
+
+    color:white;
+
+    font-size:14px;
+    font-weight:700;
+
+    transition:.3s;
+}
+
+
+.featured-action a:hover{
+    transform:translateY(-2px);
+}
+
+
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+.home-why{
+    padding:95px 22px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #082e6d,
+        #0b4b9d,
+        var(--blue2)
+    );
+
+    color:white;
+}
+
+
+.home-why-container{
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:.85fr 1.15fr;
+
+    gap:60px;
+
+    align-items:start;
+}
+
+
+.light-section-label{
+    display:inline-block;
+
+    color:#cfe2ff;
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:1.5px;
+}
+
+
+.home-why-copy h2{
+    margin:8px 0 18px;
 
     font-size:38px;
 
+    line-height:1.25;
 }
 
 
+.home-why-copy p{
+    margin:0 0 22px;
 
-.cta p{
+    color:#dceaff;
 
-    margin:20px 0 30px;
-
+    font-size:14px;
+    line-height:1.8;
 }
 
 
-
-
-
-
-
-/* =========================
-FOOTER
-========================= */
-
-
-footer{
-
-    background:#111;
+.home-why-copy a{
     color:white;
 
+    font-size:13px;
+    font-weight:700;
 }
 
+
+.home-why-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+
+.home-why-card{
+    padding:25px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.09);
+
+    border:1px solid rgba(255,255,255,.13);
+
+    transition:.3s;
+}
+
+
+.home-why-card:hover{
+    transform:translateY(-4px);
+
+    background:rgba(255,255,255,.14);
+}
+
+
+.home-why-card strong{
+    color:#9ec8ff;
+
+    font-size:11px;
+}
+
+
+.home-why-card h3{
+    margin:12px 0 8px;
+
+    font-size:17px;
+}
+
+
+.home-why-card p{
+    margin:0;
+
+    color:#dceaff;
+
+    font-size:12px;
+    line-height:1.7;
+}
+
+
+/* ==========================================
+   BOOKING PROCESS
+========================================== */
+
+.home-process{
+    padding:90px 22px;
+
+    background:white;
+}
+
+
+.home-process-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+}
+
+
+.process-step{
+    padding:30px 22px;
+
+    border-radius:16px;
+
+    background:#f8faff;
+
+    text-align:center;
+
+    border:1px solid #e5ebf4;
+}
+
+
+.process-step > span{
+    width:45px;
+    height:45px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1),
+        var(--blue2)
+    );
+
+    color:white;
+
+    font-weight:700;
+}
+
+
+.process-step h3{
+    margin:0 0 9px;
+
+    color:var(--blue1);
+
+    font-size:17px;
+}
+
+
+.process-step p{
+    margin:0;
+
+    color:var(--grey);
+
+    font-size:12px;
+    line-height:1.7;
+}
+
+
+/* ==========================================
+   TESTIMONIALS
+========================================== */
+
+.home-testimonials{
+    padding:90px 22px;
+
+    background:var(--light);
+}
+
+
+.testimonial-grid{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+.testimonial-card{
+    padding:30px;
+
+    border-radius:17px;
+
+    background:white;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.06);
+}
+
+
+.testimonial-stars{
+    margin-bottom:13px;
+
+    color:#e0a900;
+
+    letter-spacing:2px;
+}
+
+
+.testimonial-card p{
+    margin:0 0 18px;
+
+    color:#596273;
+
+    font-size:13px;
+    line-height:1.8;
+
+    font-style:italic;
+}
+
+
+.testimonial-card strong{
+    color:var(--blue1);
+
+    font-size:13px;
+}
+
+
+/* ==========================================
+   HOME CTA
+========================================== */
+
+.home-cta{
+    padding:70px 22px;
+}
+
+
+.home-cta-content{
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:42px 38px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1),
+        var(--blue2),
+        var(--blue3)
+    );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:35px;
+}
+
+
+.home-cta-content span{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.4px;
+}
+
+
+.home-cta-content h2{
+    margin:7px 0 8px;
+
+    font-size:30px;
+}
+
+
+.home-cta-content p{
+    margin:0;
+
+    color:#e6f0ff;
+
+    font-size:14px;
+}
+
+
+.home-cta-buttons{
+    display:flex;
+
+    gap:12px;
+
+    flex-shrink:0;
+}
+
+
+.home-cta-primary,
+.home-cta-secondary{
+    padding:13px 23px;
+
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+
+.home-cta-primary{
+    background:white;
+
+    color:var(--blue1);
+}
+
+
+.home-cta-secondary{
+    background:var(--green);
+
+    color:white;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:#101828;
+
+    color:white;
+
+    padding:48px 22px 25px;
+}
 
 
 .footer-content{
-
     max-width:1200px;
-    margin:auto;
-    padding:50px 20px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
 
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:45px;
 }
 
+
+.footer-brand-home{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:15px;
+}
+
+
+.footer-brand-home img{
+    height:60px;
+    width:auto;
+}
+
+
+.footer-brand-home h3{
+    margin:0;
+}
+
+
+.footer-brand-home span{
+    display:block;
+
+    margin-top:3px;
+
+    color:#9aa6b7;
+
+    font-size:11px;
+}
 
 
 .footer-content h3,
 .footer-content h4{
-
-    color:var(--gold);
-
+    margin-top:0;
 }
 
+
+.footer-content p{
+    color:#b7c0cf;
+
+    font-size:13px;
+    line-height:1.75;
+}
 
 
 .footer-content a{
+    display:inline-block;
 
-    color:#ddd;
+    margin:4px 0;
 
+    color:#cbd3df;
+
+    font-size:13px;
 }
 
+
+.footer-content a:hover{
+    color:white;
+}
 
 
 .copyright{
+    max-width:1200px;
+
+    margin:35px auto 0;
+
+    padding-top:20px;
+
+    border-top:1px solid #263043;
 
     text-align:center;
-    padding:20px;
-    border-top:1px solid #333;
-    color:#aaa;
 
+    color:#98a2b3;
+
+    font-size:12px;
 }
 
 
-
-
-
-
-
-/* =========================
-WHATSAPP BUTTON
-========================= */
-
+/* ==========================================
+   FLOATING WHATSAPP
+========================================== */
 
 .whatsapp{
-
     position:fixed;
-    right:25px;
-    bottom:25px;
-    background:#25D366;
+
+    right:24px;
+    bottom:24px;
+
+    z-index:1000;
+
+    padding:14px 21px;
+
+    border-radius:50px;
+
+    background:var(--green);
+
     color:white;
-    padding:15px 25px;
-    border-radius:40px;
-    font-weight:600;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
-    z-index:999;
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:
+    0 8px 24px rgba(0,0,0,.22);
+
+    transition:.3s;
+}
+
+
+.whatsapp:hover{
+    transform:translateY(-3px);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1050px){
+
+    .home-services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .featured-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .home-process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .home-hero{
+        gap:40px;
+    }
+
+    .home-hero h1{
+        font-size:45px;
+    }
 
 }
 
 
-
-
-
-
-
-
-
-/* =========================
-MOBILE RESPONSIVE
-========================= */
-
+/* ==========================================
+   MOBILE NAV
+========================================== */
 
 @media(max-width:900px){
 
+    .home-brand img{
+        height:60px;
+    }
 
-.navbar{
+    .home-brand-text{
+        display:none;
+    }
 
-    padding:15px 20px;
+    .menu-toggle{
+        display:block;
+    }
+
+    .home-navbar .nav-links{
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+
+        left:0;
+        right:0;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:4px;
+
+        padding:20px;
+
+        border-radius:13px;
+
+        background:white;
+
+        box-shadow:
+        0 12px 35px rgba(0,0,0,.17);
+
+        z-index:100;
+    }
+
+    .home-navbar .nav-links.active{
+        display:flex;
+    }
+
+    .home-navbar .nav-links li{
+        width:100%;
+    }
+
+    .home-navbar .nav-links a{
+        display:block;
+
+        width:100%;
+
+        padding:9px 5px;
+
+        color:var(--blue1);
+    }
+
+    .home-navbar .nav-links a.active{
+        border-bottom:none;
+
+        background:#edf4ff;
+
+        border-radius:7px;
+
+        padding:9px 10px;
+    }
+
+    .home-navbar .nav-book{
+        width:100%;
+
+        margin-top:7px;
+
+        background:var(--blue1);
+
+        color:white !important;
+
+        text-align:center;
+    }
+
+
+    /* HERO */
+
+    .home-hero{
+        grid-template-columns:1fr;
+
+        margin-top:55px;
+
+        text-align:center;
+    }
+
+    .home-hero-content{
+        margin:auto;
+    }
+
+    .home-hero-buttons{
+        justify-content:center;
+    }
+
+    .home-hero-image{
+        max-width:650px;
+
+        margin:auto;
+
+        width:100%;
+    }
+
+
+    /* WHY */
+
+    .home-why-container{
+        grid-template-columns:1fr;
+    }
+
+
+    /* CTA */
+
+    .home-cta-content{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content{
+        grid-template-columns:1fr 1fr;
+    }
 
 }
 
 
-.menu-toggle{
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
-    display:block;
+@media(max-width:600px){
 
-}
+    .home-page-header{
+        padding:14px 18px 55px;
+    }
 
-
-
-.nav-links{
-
-    position:absolute;
-    top:70px;
-    left:0;
-    width:100%;
-    background:white;
-    flex-direction:column;
-    padding:30px;
-    display:none;
-
-}
+    .home-brand img{
+        height:55px;
+    }
 
 
+    /* HERO */
 
-.nav-links.active{
+    .home-hero{
+        margin-top:48px;
+    }
 
-    display:flex;
+    .home-hero h1{
+        font-size:32px;
+    }
 
-}
+    .home-hero p{
+        font-size:14px;
+    }
 
+    .home-hero-buttons{
+        flex-direction:column;
+    }
 
+    .home-primary-btn,
+    .home-secondary-btn{
+        width:100%;
+    }
 
-.hero{
-
-    height:75vh;
-
-}
-
-
-
-.hero h1{
-
-    font-size:38px;
-
-}
-
-
-
-.hero-buttons{
-
-    flex-direction:column;
-    width:220px;
-
-}
+    .home-hero-image > img{
+        height:300px;
+    }
 
 
+    /* COMMON HEADING */
 
-.vehicle-grid,
-.features,
-.testimonial-grid,
-.footer-content{
-
-    grid-template-columns:1fr;
-
-}
+    .section-heading h2{
+        font-size:30px;
+    }
 
 
+    /* SERVICES */
 
-.section-title h2{
+    .home-services{
+        padding:65px 18px;
+    }
 
-    font-size:30px;
+    .home-services-grid{
+        grid-template-columns:1fr;
+    }
 
-}
+
+    /* FEATURED */
+
+    .featured-fleet{
+        padding:65px 18px;
+    }
+
+    .featured-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured-image{
+        height:225px;
+    }
 
 
+    /* WHY */
+
+    .home-why{
+        padding:70px 18px;
+    }
+
+    .home-why-copy h2{
+        font-size:30px;
+    }
+
+    .home-why-grid{
+        grid-template-columns:1fr;
+    }
+
+
+    /* PROCESS */
+
+    .home-process{
+        padding:65px 18px;
+    }
+
+    .home-process-grid{
+        grid-template-columns:1fr;
+    }
+
+
+    /* TESTIMONIALS */
+
+    .home-testimonials{
+        padding:65px 18px;
+    }
+
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+
+    /* CTA */
+
+    .home-cta{
+        padding:45px 18px;
+    }
+
+    .home-cta-content{
+        padding:32px 22px;
+    }
+
+    .home-cta-content h2{
+        font-size:26px;
+    }
+
+    .home-cta-buttons{
+        width:100%;
+
+        flex-direction:column;
+    }
+
+    .home-cta-primary,
+    .home-cta-secondary{
+        width:100%;
+
+        text-align:center;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+
+    .whatsapp{
+        right:17px;
+        bottom:17px;
+
+        padding:12px 17px;
+
+        font-size:12px;
+    }
 
 }
