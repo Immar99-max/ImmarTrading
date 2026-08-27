@@ -4,264 +4,636 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Our Fleet | Immar Trading</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-<meta name="description" content="Browse our fleet of premium rental vehicles. Get an instant quote and book directly through WhatsApp.">
+<title>Our Fleet | Immar Trading Car Hire Zambia</title>
+
+<meta
+name="description"
+content="Browse the Immar Trading vehicle fleet, view vehicle galleries, calculate an instant rental quote and book directly through WhatsApp.">
 
 <link rel="stylesheet" href="style.css">
+
 <link rel="stylesheet" href="fleet.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+rel="stylesheet">
 
 </head>
 
+
 <body>
 
-<header>
+
+<!-- =====================================================
+     BLUE GRADIENT HEADER
+===================================================== -->
+
+<header class="fleet-header">
 
 <nav class="navbar">
 
+
+<!-- BRAND -->
+
 <div class="logo">
-<a href="index.html">
+
+<a href="index.html"
+aria-label="Immar Trading Home">
+
 IMMAR <span>TRADING</span>
+
 </a>
+
 </div>
 
-<button class="menu-toggle" id="menu-toggle">
+
+<!-- MOBILE MENU -->
+
+<button
+class="menu-toggle"
+id="menu-toggle"
+type="button"
+aria-label="Open navigation menu"
+aria-expanded="false"
+aria-controls="nav-links">
+
 ☰
+
 </button>
 
-<ul class="nav-links" id="nav-links">
 
-<li><a href="index.html">Home</a></li>
-<li><a href="fleet.html" class="active">Fleet</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
+<!-- NAVIGATION -->
+
+<ul
+class="nav-links"
+id="nav-links">
+
 
 <li>
-<a class="nav-book"
-href="https://wa.me/260973188676"
-target="_blank">
-Book Now
+
+<a href="index.html">
+Home
 </a>
+
 </li>
+
+
+<li>
+
+<a
+href="fleet.html"
+class="active">
+
+Fleet
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="services.html">
+Services
+</a>
+
+</li>
+
+
+<li>
+
+<a href="about.html">
+About
+</a>
+
+</li>
+
+
+<li>
+
+<a href="contact.html">
+Contact
+</a>
+
+</li>
+
+
+<li>
+
+<a
+class="nav-book"
+href="https://wa.me/260973188676?text=Hello%20IMMAR%20TRADING%2C%20I%20would%20like%20to%20hire%20a%20vehicle."
+target="_blank"
+rel="noopener">
+
+Book Now
+
+</a>
+
+</li>
+
 
 </ul>
 
+
 </nav>
 
-</header>
 
-<section class="fleet-hero">
+
+<!-- =====================================================
+     FLEET HERO
+===================================================== -->
+
+<div class="fleet-hero">
+
 
 <div class="overlay"></div>
 
+
 <div class="fleet-hero-content">
 
-<h1>Our Vehicle Fleet</h1>
+
+<span class="fleet-tag">
+
+IMMAR TRADING CAR HIRE
+
+</span>
+
+
+<h1>
+
+Our Vehicle Fleet
+
+</h1>
+
 
 <p>
-Browse our reliable fleet of executive vehicles, SUVs and luxury cars.
-Select your preferred vehicle, calculate an instant quote and book via WhatsApp.
+
+Choose from our range of reliable, comfortable and
+professionally maintained vehicles for business,
+family travel, airport transfers, tourism and
+intercity journeys across Zambia.
+
 </p>
+
+
+<div class="fleet-hero-actions">
+
+
+<a
+href="#availableFleet"
+class="fleet-primary-btn">
+
+Explore Vehicles
+
+</a>
+
+
+<a
+href="#instantQuote"
+class="fleet-secondary-btn">
+
+Get Instant Quote
+
+</a>
+
 
 </div>
 
-</section>
 
-<section class="fleet-gallery">
+</div>
+
+
+</div>
+
+
+</header>
+
+
+
+<!-- =====================================================
+     AVAILABLE VEHICLES
+===================================================== -->
+
+<section
+class="fleet-gallery"
+id="availableFleet">
+
 
 <div class="section-title">
 
-<h2>Available Vehicles</h2>
+
+<span class="section-tag">
+
+OUR VEHICLES
+
+</span>
+
+
+<h2>
+
+Available Vehicles
+
+</h2>
+
 
 <p>
-Professionally maintained vehicles for business, tourism, airport transfers and family travel.
+
+Browse each vehicle and select the thumbnails to view
+additional images before requesting your quotation.
+
 </p>
+
 
 </div>
 
+
+
 <div class="fleet-grid">
 
-<!-- ===============================
-EXECUTIVE SUV
-================================ -->
 
-<div class="fleet-card">
+
+<!-- =====================================================
+     EXECUTIVE SUV
+===================================================== -->
+
+<article class="fleet-card">
+
+
+<div class="vehicle-gallery">
+
+
+<!-- MAIN IMAGE -->
 
 <div class="main-image">
 
 <img
 id="pajeroMain"
 src="pajero.jpeg"
-alt="Executive SUV">
+alt="Executive SUV"
+class="vehicle-main-image">
 
 </div>
 
-<div class="thumbnail-row">
+
+<!-- THUMBNAILS -->
+
+<div
+class="thumbnail-row"
+aria-label="Executive SUV image gallery">
+
+
+<button
+type="button"
+class="thumbnail-button active-thumb"
+onclick="changeImage('pajeroMain','pajero.jpeg',this)"
+aria-label="View Executive SUV image 1">
 
 <img
 src="pajero.jpeg"
-onclick="changeImage('pajeroMain',this.src)"
-class="active-thumb">
+alt="Executive SUV thumbnail 1">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('pajeroMain','pajero.jpeg',this)"
+aria-label="View Executive SUV image 2">
 
 <img
 src="pajero.jpeg"
-onclick="changeImage('pajeroMain',this.src)">
+alt="Executive SUV thumbnail 2">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('pajeroMain','pajero.jpeg',this)"
+aria-label="View Executive SUV image 3">
 
 <img
 src="pajero.jpeg"
-onclick="changeImage('pajeroMain',this.src)">
+alt="Executive SUV thumbnail 3">
+
+</button>
+
 
 </div>
+
+
+</div>
+
+
 
 <div class="fleet-content">
 
-<h3>Executive SUV</h3>
 
-<p>
+<div class="vehicle-heading">
 
-✔ Automatic Transmission<br>
-✔ Air Conditioning<br>
-✔ Leather Interior<br>
-✔ 7 Passenger Capacity<br>
-✔ Perfect for Long Distance Travel
+<h3>
+Executive SUV
+</h3>
+
+<span class="vehicle-badge">
+Premium
+</span>
+
+</div>
+
+
+<p class="vehicle-description">
+
+Comfortable and capable SUV suitable for executive travel,
+family journeys and long-distance transportation.
 
 </p>
 
+
+<ul class="vehicle-features">
+
+<li>Automatic Transmission</li>
+
+<li>Air Conditioning</li>
+
+<li>Leather Interior</li>
+
+<li>7 Passenger Capacity</li>
+
+<li>Long Distance Travel</li>
+
+</ul>
+
+
 <button
-
+type="button"
 class="selectVehicle"
-
 data-vehicle="Executive SUV">
 
 Select Vehicle
 
 </button>
 
-</div>
 
 </div>
 
-<!-- ===============================
-EXECUTIVE SEDAN
-================================ -->
 
-<div class="fleet-card">
+</article>
+
+
+
+<!-- =====================================================
+     EXECUTIVE SEDAN
+===================================================== -->
+
+<article class="fleet-card">
+
+
+<div class="vehicle-gallery">
+
 
 <div class="main-image">
 
 <img
 id="sedanMain"
 src="sedan2.jpeg"
-alt="Executive Sedan">
+alt="Executive Sedan"
+class="vehicle-main-image">
 
 </div>
 
-<div class="thumbnail-row">
+
+<div
+class="thumbnail-row"
+aria-label="Executive Sedan image gallery">
+
+
+<button
+type="button"
+class="thumbnail-button active-thumb"
+onclick="changeImage('sedanMain','sedan2.jpeg',this)"
+aria-label="View Executive Sedan image 1">
 
 <img
-
 src="sedan2.jpeg"
+alt="Executive Sedan thumbnail 1">
 
-onclick="changeImage('sedanMain',this.src)"
+</button>
 
-class="active-thumb">
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('sedanMain','sedan2.jpeg',this)"
+aria-label="View Executive Sedan image 2">
 
 <img
-
 src="sedan2.jpeg"
+alt="Executive Sedan thumbnail 2">
 
-onclick="changeImage('sedanMain',this.src)">
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('sedanMain','sedan2.jpeg',this)"
+aria-label="View Executive Sedan image 3">
 
 <img
-
 src="sedan2.jpeg"
+alt="Executive Sedan thumbnail 3">
 
-onclick="changeImage('sedanMain',this.src)">
+</button>
+
 
 </div>
+
+
+</div>
+
+
 
 <div class="fleet-content">
 
-<h3>Executive Sedan</h3>
 
-<p>
+<div class="vehicle-heading">
 
-✔ Fuel Efficient<br>
-✔ Comfortable Seating<br>
-✔ Air Conditioning<br>
-✔ Bluetooth Audio<br>
-✔ Ideal for Corporate Hire
+<h3>
+Executive Sedan
+</h3>
+
+<span class="vehicle-badge">
+Business
+</span>
+
+</div>
+
+
+<p class="vehicle-description">
+
+A comfortable and efficient option for corporate journeys,
+airport transfers and professional travel.
 
 </p>
 
+
+<ul class="vehicle-features">
+
+<li>Fuel Efficient</li>
+
+<li>Comfortable Seating</li>
+
+<li>Air Conditioning</li>
+
+<li>Bluetooth Audio</li>
+
+<li>Corporate Hire</li>
+
+</ul>
+
+
 <button
-
+type="button"
 class="selectVehicle"
-
 data-vehicle="Executive Sedan">
 
 Select Vehicle
 
 </button>
 
-</div>
 
 </div>
-<!-- ===============================
-FAMILY SUV
-================================ -->
 
-<div class="fleet-card">
+
+</article>
+
+
+
+<!-- =====================================================
+     FAMILY SUV
+===================================================== -->
+
+<article class="fleet-card">
+
+
+<div class="vehicle-gallery">
+
 
 <div class="main-image">
 
 <img
 id="familyMain"
 src="familysuv.jpeg"
-alt="Family SUV">
+alt="Family SUV"
+class="vehicle-main-image">
 
 </div>
 
-<div class="thumbnail-row">
+
+<div
+class="thumbnail-row"
+aria-label="Family SUV image gallery">
+
+
+<button
+type="button"
+class="thumbnail-button active-thumb"
+onclick="changeImage('familyMain','familysuv1.jpeg',this)"
+aria-label="View Family SUV image 1">
 
 <img
 src="familysuv1.jpeg"
-onclick="changeImage('familyMain',this.src)"
-class="active-thumb">
+alt="Family SUV thumbnail 1">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('familyMain','familysuv2.jpeg',this)"
+aria-label="View Family SUV image 2">
 
 <img
 src="familysuv2.jpeg"
-onclick="changeImage('familyMain',this.src)">
+alt="Family SUV thumbnail 2">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('familyMain','familysuv3.jpeg',this)"
+aria-label="View Family SUV image 3">
 
 <img
 src="familysuv3.jpeg"
-onclick="changeImage('familyMain',this.src)">
+alt="Family SUV thumbnail 3">
+
+</button>
+
 
 </div>
 
+
+</div>
+
+
+
 <div class="fleet-content">
 
-<h3>Family SUV</h3>
 
-<p>
+<div class="vehicle-heading">
 
-✔ Spacious Interior<br>
-✔ Comfortable Ride<br>
-✔ Air Conditioning<br>
-✔ Large Luggage Space<br>
-✔ Ideal for Family Trips
+<h3>
+Family SUV
+</h3>
+
+<span class="vehicle-badge">
+Family
+</span>
+
+</div>
+
+
+<p class="vehicle-description">
+
+Spacious and practical transportation designed for family
+journeys, holidays and comfortable intercity travel.
 
 </p>
 
+
+<ul class="vehicle-features">
+
+<li>Spacious Interior</li>
+
+<li>Comfortable Ride</li>
+
+<li>Air Conditioning</li>
+
+<li>Large Luggage Space</li>
+
+<li>Ideal for Family Trips</li>
+
+</ul>
+
+
 <button
+type="button"
 class="selectVehicle"
 data-vehicle="Family SUV">
 
@@ -269,56 +641,127 @@ Select Vehicle
 
 </button>
 
-</div>
 
 </div>
 
-<!-- ===============================
-DOUBLE CAB PICKUP
-================================ -->
 
-<div class="fleet-card">
+</article>
+
+
+
+<!-- =====================================================
+     DOUBLE CAB PICKUP
+===================================================== -->
+
+<article class="fleet-card">
+
+
+<div class="vehicle-gallery">
+
 
 <div class="main-image">
 
 <img
 id="pickupMain"
 src="doublecabpickup.jpeg"
-alt="Double Cab Pickup">
+alt="Double Cab Pickup"
+class="vehicle-main-image">
 
 </div>
 
-<div class="thumbnail-row">
+
+<div
+class="thumbnail-row"
+aria-label="Double Cab Pickup image gallery">
+
+
+<button
+type="button"
+class="thumbnail-button active-thumb"
+onclick="changeImage('pickupMain','doublecabinsider1.jpeg',this)"
+aria-label="View Double Cab Pickup image 1">
 
 <img
 src="doublecabinsider1.jpeg"
-onclick="changeImage('pickupMain',this.src)"
-class="active-thumb">
+alt="Double Cab Pickup interior thumbnail 1">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('pickupMain','doublecabinsider2.jpeg',this)"
+aria-label="View Double Cab Pickup image 2">
 
 <img
 src="doublecabinsider2.jpeg"
-onclick="changeImage('pickupMain',this.src)">
+alt="Double Cab Pickup interior thumbnail 2">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('pickupMain','doublecabinsider3.jpeg',this)"
+aria-label="View Double Cab Pickup image 3">
 
 <img
 src="doublecabinsider3.jpeg"
-onclick="changeImage('pickupMain',this.src)">
+alt="Double Cab Pickup interior thumbnail 3">
+
+</button>
+
 
 </div>
 
+
+</div>
+
+
+
 <div class="fleet-content">
 
-<h3>Double Cab Pickup</h3>
 
-<p>
+<div class="vehicle-heading">
 
-✔ 4x4 Capability<br>
-✔ Heavy Duty Suspension<br>
-✔ Large Cargo Bed<br>
-✔ Excellent for Mining Sites
+<h3>
+Double Cab Pickup
+</h3>
+
+<span class="vehicle-badge">
+4×4
+</span>
+
+</div>
+
+
+<p class="vehicle-description">
+
+A robust option for project work, industrial assignments,
+mine-site travel and demanding road conditions.
 
 </p>
 
+
+<ul class="vehicle-features">
+
+<li>4×4 Capability</li>
+
+<li>Heavy Duty Suspension</li>
+
+<li>Large Cargo Bed</li>
+
+<li>Project Transportation</li>
+
+<li>Excellent for Mining Sites</li>
+
+</ul>
+
+
 <button
+type="button"
 class="selectVehicle"
 data-vehicle="Double Cab Pickup">
 
@@ -326,56 +769,127 @@ Select Vehicle
 
 </button>
 
-</div>
 
 </div>
 
-<!-- ===============================
-MINIBUS
-================================ -->
 
-<div class="fleet-card">
+</article>
+
+
+
+<!-- =====================================================
+     PASSENGER MINIBUS
+===================================================== -->
+
+<article class="fleet-card">
+
+
+<div class="vehicle-gallery">
+
 
 <div class="main-image">
 
 <img
 id="busMain"
 src="busmain.jpeg"
-alt="Minibus">
+alt="Passenger Minibus"
+class="vehicle-main-image">
 
 </div>
 
-<div class="thumbnail-row">
+
+<div
+class="thumbnail-row"
+aria-label="Passenger Minibus image gallery">
+
+
+<button
+type="button"
+class="thumbnail-button active-thumb"
+onclick="changeImage('busMain','bus1.jpeg',this)"
+aria-label="View Passenger Minibus image 1">
 
 <img
 src="bus1.jpeg"
-onclick="changeImage('busMain',this.src)"
-class="active-thumb">
+alt="Passenger Minibus thumbnail 1">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('busMain','bus3.jpeg',this)"
+aria-label="View Passenger Minibus image 2">
 
 <img
 src="bus3.jpeg"
-onclick="changeImage('busMain',this.src)">
+alt="Passenger Minibus thumbnail 2">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('busMain','bus2.jpeg',this)"
+aria-label="View Passenger Minibus image 3">
 
 <img
 src="bus2.jpeg"
-onclick="changeImage('busMain',this.src)">
+alt="Passenger Minibus thumbnail 3">
+
+</button>
+
 
 </div>
 
+
+</div>
+
+
+
 <div class="fleet-content">
 
-<h3>Passenger Minibus</h3>
 
-<p>
+<div class="vehicle-heading">
 
-✔ 14–16 Seater<br>
-✔ Air Conditioning<br>
-✔ Comfortable Seating<br>
-✔ Group Transport
+<h3>
+Passenger Minibus
+</h3>
+
+<span class="vehicle-badge">
+Group Travel
+</span>
+
+</div>
+
+
+<p class="vehicle-description">
+
+Practical group transportation for events, organisations,
+airport movements and larger travelling parties.
 
 </p>
 
+
+<ul class="vehicle-features">
+
+<li>14–16 Seater</li>
+
+<li>Air Conditioning</li>
+
+<li>Comfortable Seating</li>
+
+<li>Group Transportation</li>
+
+<li>Event & Corporate Travel</li>
+
+</ul>
+
+
 <button
+type="button"
 class="selectVehicle"
 data-vehicle="Passenger Minibus">
 
@@ -383,56 +897,127 @@ Select Vehicle
 
 </button>
 
-</div>
 
 </div>
 
-<!-- ===============================
-BUDGET FRIENDLY
-================================ -->
 
-<div class="fleet-card">
+</article>
+
+
+
+<!-- =====================================================
+     BUDGET FRIENDLY
+===================================================== -->
+
+<article class="fleet-card">
+
+
+<div class="vehicle-gallery">
+
 
 <div class="main-image">
 
 <img
 id="budgetMain"
 src="budgetfriendly.jpeg"
-alt="Budget Friendly">
+alt="Budget Friendly Vehicle"
+class="vehicle-main-image">
 
 </div>
 
-<div class="thumbnail-row">
+
+<div
+class="thumbnail-row"
+aria-label="Budget Friendly vehicle image gallery">
+
+
+<button
+type="button"
+class="thumbnail-button active-thumb"
+onclick="changeImage('budgetMain','fitinside1.jpeg',this)"
+aria-label="View Budget Friendly vehicle image 1">
 
 <img
 src="fitinside1.jpeg"
-onclick="changeImage('budgetMain',this.src)"
-class="active-thumb">
+alt="Budget Friendly vehicle interior thumbnail 1">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('budgetMain','fitinside3.jpeg',this)"
+aria-label="View Budget Friendly vehicle image 2">
 
 <img
 src="fitinside3.jpeg"
-onclick="changeImage('budgetMain',this.src)">
+alt="Budget Friendly vehicle interior thumbnail 2">
+
+</button>
+
+
+<button
+type="button"
+class="thumbnail-button"
+onclick="changeImage('budgetMain','fitinside2.jpeg',this)"
+aria-label="View Budget Friendly vehicle image 3">
 
 <img
 src="fitinside2.jpeg"
-onclick="changeImage('budgetMain',this.src)">
+alt="Budget Friendly vehicle interior thumbnail 3">
+
+</button>
+
 
 </div>
 
+
+</div>
+
+
+
 <div class="fleet-content">
 
-<h3>Budget Friendly</h3>
 
-<p>
+<div class="vehicle-heading">
 
-✔ Premium Interior<br>
-✔ Leather Seats<br>
-✔ Executive Comfort<br>
-✔ VIP Transport
+<h3>
+Budget Friendly
+</h3>
+
+<span class="vehicle-badge">
+Value
+</span>
+
+</div>
+
+
+<p class="vehicle-description">
+
+Affordable and convenient transport for customers seeking
+reliable everyday vehicle hire.
 
 </p>
 
+
+<ul class="vehicle-features">
+
+<li>Affordable Daily Hire</li>
+
+<li>Comfortable Interior</li>
+
+<li>Fuel Efficient</li>
+
+<li>Easy City Driving</li>
+
+<li>Ideal for Local Travel</li>
+
+</ul>
+
+
 <button
+type="button"
 class="selectVehicle"
 data-vehicle="Budget Friendly">
 
@@ -440,52 +1025,122 @@ Select Vehicle
 
 </button>
 
-</div>
 
 </div>
+
+
+</article>
+
 
 </div>
 
 </section>
 
-<!-- =====================================
-INSTANT QUOTE CALCULATOR
-====================================== -->
 
-<section class="quote-section">
+
+<!-- =====================================================
+     INSTANT QUOTE
+===================================================== -->
+
+<section
+class="quote-section"
+id="instantQuote">
+
 
 <div class="quote-container">
 
-<h2>Instant Rental Quote</h2>
+
+<div class="quote-heading">
+
+
+<span class="quote-tag">
+
+QUICK ESTIMATE
+
+</span>
+
+
+<h2>
+
+Instant Rental Quote
+
+</h2>
+
 
 <p>
-Select your vehicle, choose your trip type and number of days.
+
+Choose your vehicle, select whether your journey is local
+or intercity, and enter the number of booking days.
+
 </p>
 
-<label>
+
+</div>
+
+
+
+<div class="quote-form">
+
+
+<!-- VEHICLE -->
+
+<div class="quote-field">
+
+<label for="vehicleSelect">
 
 Vehicle
 
 </label>
 
-<select id="vehicleSelect">
 
-<option>Executive SUV</option>
-<option>Executive Sedan</option>
-<option>Family SUV</option>
-<option>Double Cab Pickup</option>
-<option>Passenger Minibus</option>
-<option>Budget Friendly</option>
+<select
+id="vehicleSelect"
+name="vehicle">
+
+<option value="Executive SUV">
+Executive SUV
+</option>
+
+<option value="Executive Sedan">
+Executive Sedan
+</option>
+
+<option value="Family SUV">
+Family SUV
+</option>
+
+<option value="Double Cab Pickup">
+Double Cab Pickup
+</option>
+
+<option value="Passenger Minibus">
+Passenger Minibus
+</option>
+
+<option value="Budget Friendly">
+Budget Friendly
+</option>
 
 </select>
 
-<label>
+</div>
+
+
+
+<!-- HIRE TYPE -->
+
+<div class="quote-field">
+
+<label for="hireType">
 
 Hire Type
 
 </label>
 
-<select id="hireType">
+
+<select
+id="hireType"
+name="hireType">
 
 <option value="local">
 Local Hire
@@ -497,98 +1152,317 @@ Intercity Hire
 
 </select>
 
-<label>
+</div>
+
+
+
+<!-- NUMBER OF DAYS -->
+
+<div class="quote-field days-field">
+
+<label for="days">
 
 Number of Days
 
 </label>
 
+
+<div class="days-input-wrapper">
+
+
+<button
+type="button"
+id="decreaseDays"
+class="day-control"
+aria-label="Decrease number of booking days">
+
+−
+
+</button>
+
+
 <input
 type="number"
 id="days"
+name="days"
 min="1"
-value="1">
+max="365"
+step="1"
+value="1"
+inputmode="numeric"
+pattern="[0-9]*"
+autocomplete="off"
+aria-label="Number of booking days">
+
 
 <button
+type="button"
+id="increaseDays"
+class="day-control"
+aria-label="Increase number of booking days">
+
++
+
+</button>
+
+
+</div>
+
+
+<small>
+
+Enter or select the total number of rental days.
+
+</small>
+
+
+</div>
+
+
+
+<button
+type="button"
 id="calculateQuote">
 
 Calculate Quote
 
 </button>
 
-<div class="quote-output">
 
-<h3>
+</div>
 
-Estimated Total
 
-</h3>
 
-<h1 id="totalPrice">
+<!-- =====================================================
+     QUOTE RESULT
+===================================================== -->
+
+<div
+class="quote-output"
+aria-live="polite">
+
+
+<span class="estimate-label">
+
+ESTIMATED TOTAL
+
+</span>
+
+
+<h2 id="totalPrice">
 
 ZMW 500
 
-</h1>
+</h2>
 
-<p id="summary">
+
+<div
+id="summary"
+class="quote-summary">
 
 1 Day Local Hire
 
+</div>
+
+
+<p class="quote-note">
+
+This is an estimated rental quotation.
+Final pricing and vehicle availability will be confirmed
+by the Immar Trading bookings team.
+
 </p>
+
 
 <a
 id="bookWhatsapp"
+href="https://wa.me/260973188676"
 target="_blank"
+rel="noopener"
 class="quoteButton">
 
 Book via WhatsApp
 
 </a>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 </section>
 
-<footer>
 
-<div class="footer-content">
+
+<!-- =====================================================
+     BOOKING CTA
+===================================================== -->
+
+<section class="fleet-cta">
+
+
+<div class="fleet-cta-content">
+
 
 <div>
 
-<h3>IMMAR TRADING</h3>
+<span>
+
+NEED ASSISTANCE?
+
+</span>
+
+
+<h2>
+
+Not Sure Which Vehicle Is Right For You?
+
+</h2>
+
 
 <p>
 
-Reliable vehicle hire solutions across Zambia.
+Tell us about your journey and our team will help you
+choose the most suitable vehicle.
 
 </p>
 
 </div>
 
+
+<a
+href="https://wa.me/260973188676?text=Hello%20IMMAR%20TRADING%2C%20I%20need%20help%20choosing%20a%20vehicle."
+target="_blank"
+rel="noopener">
+
+Chat With Our Team
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div class="footer-content">
+
+
 <div>
 
-<h4>Quick Links</h4>
+<h3>
 
-<a href="index.html">Home</a><br>
-<a href="fleet.html">Fleet</a><br>
-<a href="services.html">Services</a><br>
-<a href="contact.html">Contact</a>
+IMMAR TRADING
+
+</h3>
+
+
+<p>
+
+Reliable, affordable and professional vehicle hire
+solutions across Zambia.
+
+</p>
 
 </div>
+
+
 
 <div>
 
-<h4>Contact</h4>
 
-<p>📞 +260 973188676</p>
+<h4>
 
-<p>✉ info@immartrading.com</p>
+Quick Links
+
+</h4>
+
+
+<a href="index.html">
+Home
+</a>
+
+<br>
+
+
+<a href="fleet.html">
+Fleet
+</a>
+
+<br>
+
+
+<a href="services.html">
+Services
+</a>
+
+<br>
+
+
+<a href="about.html">
+About
+</a>
+
+<br>
+
+
+<a href="contact.html">
+Contact
+</a>
+
 
 </div>
 
+
+
+<div>
+
+
+<h4>
+
+Contact
+
+</h4>
+
+
+<p>
+
+📞 +260 973 188 676
+
+</p>
+
+
+<p>
+
+✉ info@immartrading.com
+
+</p>
+
+
+<p>
+
+📍 Lusaka, Zambia
+
+</p>
+
+
 </div>
+
+
+</div>
+
+
 
 <div class="copyright">
 
@@ -596,19 +1470,35 @@ Reliable vehicle hire solutions across Zambia.
 
 </div>
 
+
 </footer>
 
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
 <a
-href="https://wa.me/260973188676"
+href="https://wa.me/260973188676?text=Hello%20IMMAR%20TRADING%2C%20I%20would%20like%20to%20make%20a%20vehicle%20hire%20enquiry."
 class="whatsapp"
-target="_blank">
+target="_blank"
+rel="noopener">
 
 WhatsApp
 
 </a>
 
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="script.js"></script>
+
 <script src="fleet.js"></script>
+
 
 </body>
 
