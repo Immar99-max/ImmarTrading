@@ -1,184 +1,302 @@
 /* ==========================================
-   IMMAR TRADING SERVICES PAGE CSS
+   IMMAR TRADING SERVICES
 ========================================== */
 
+:root{
+    --blue1:#0b3c8a;
+    --blue2:#1e73d8;
+    --blue3:#4fa3ff;
 
-/* ==========================================
-   GLOBAL
-========================================== */
+    --white:#ffffff;
+    --light:#f5f7fb;
+    --light-blue:#edf4ff;
 
-*{
-    box-sizing:border-box;
-}
+    --dark:#172033;
+    --grey:#667085;
 
+    --green:#25D366;
 
-body{
-
-    font-family:'Poppins', sans-serif;
-    margin:0;
-    color:#333;
-    background:#f8f9fb;
-
-}
-
-
-a{
-
-    text-decoration:none;
-
+    --shadow:0 12px 35px rgba(0,0,0,.09);
 }
 
 
 /* ==========================================
-   HERO SECTION
+   HEADER
 ========================================== */
 
+.services-page-header{
 
-.service-hero{
-
-    height:500px;
     background:
-
     linear-gradient(
-        rgba(0,0,0,.55),
-        rgba(0,0,0,.55)
-    ),
-
-    url("../images/service-bg.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-    position:relative;
-
-}
-
-
-
-.service-hero-content{
-
-    max-width:850px;
-    padding:30px;
-    color:white;
-    z-index:2;
-
-}
-
-
-
-.service-hero-content h1{
-
-    font-size:48px;
-    font-weight:700;
-    margin-bottom:20px;
-
-}
-
-
-
-.service-hero-content p{
-
-    font-size:18px;
-    line-height:1.7;
-    margin-bottom:30px;
-
-}
-
-
-
-.hero-btn{
-
-    display:inline-block;
-
-    background:#c5a334;
+        135deg,
+        var(--blue1),
+        var(--blue2) 60%,
+        var(--blue3)
+    );
 
     color:white;
 
-    padding:14px 35px;
-
-    border-radius:30px;
-
-    font-weight:600;
-
-    transition:.3s;
-
+    padding:18px 22px 75px;
 }
 
 
-.hero-btn:hover{
+.services-navbar{
 
-    background:#a88722;
-
-}
-
-
-
-
-
-
-/* ==========================================
-   INTRO SECTION
-========================================== */
-
-
-.services-intro{
-
-    max-width:1000px;
+    max-width:1250px;
 
     margin:auto;
 
-    padding:70px 20px;
+    display:flex;
 
-    text-align:center;
+    align-items:center;
 
+    justify-content:space-between;
+
+    position:relative;
 }
 
 
+.services-brand a{
 
-.services-intro h2{
+    display:flex;
 
-    font-size:36px;
+    align-items:center;
 
-    color:#0b3c8a;
+    gap:14px;
 
-    margin-bottom:20px;
-
+    color:white;
 }
 
 
+.services-brand img{
 
-.services-intro p{
+    height:75px;
 
-    line-height:1.8;
-
-    font-size:17px;
-
-    color:#666;
-
+    width:auto;
 }
 
 
+.services-brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+}
 
 
+.services-brand-text strong{
 
+    font-size:18px;
+}
+
+
+.services-brand-text span{
+
+    color:#e5efff;
+
+    font-size:11px;
+}
+
+
+.services-navbar .nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+}
+
+
+.services-navbar .nav-links a{
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:600;
+}
+
+
+.services-navbar .nav-links a.active{
+
+    border-bottom:2px solid white;
+
+    padding-bottom:5px;
+}
+
+
+.services-navbar .nav-book{
+
+    background:white;
+
+    color:var(--blue1) !important;
+
+    padding:11px 22px;
+
+    border-radius:30px;
+}
 
 
 /* ==========================================
-   SERVICE TABS
+   HERO
 ========================================== */
 
+.services-hero{
 
-.services-container{
+    max-width:850px;
 
-    padding:20px 5% 80px;
+    margin:70px auto 0;
 
+    padding:0 20px;
+
+    text-align:center;
 }
 
+
+.services-hero-tag{
+
+    display:inline-block;
+
+    padding:8px 17px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.14);
+
+    border:
+    1px solid rgba(255,255,255,.28);
+
+    font-size:12px;
+
+    letter-spacing:1.5px;
+}
+
+
+.services-hero h1{
+
+    margin:18px 0 15px;
+
+    font-size:48px;
+
+    line-height:1.2;
+}
+
+
+.services-hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:#e8f2ff;
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+
+.services-hero-actions{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:14px;
+}
+
+
+.services-primary-btn,
+.services-secondary-btn{
+
+    padding:13px 27px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+
+.services-primary-btn{
+
+    background:white;
+
+    color:var(--blue1);
+}
+
+
+.services-secondary-btn{
+
+    border:
+    1px solid rgba(255,255,255,.7);
+
+    color:white;
+}
+
+
+/* ==========================================
+   SERVICE NAVIGATION
+========================================== */
+
+.service-navigation-section{
+
+    padding:70px 22px 45px;
+
+    background:white;
+
+    text-align:center;
+}
+
+
+.service-navigation-intro{
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+
+.service-navigation-intro > span{
+
+    color:var(--blue2);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+}
+
+
+.service-navigation-intro h2{
+
+    margin:6px 0 12px;
+
+    color:var(--blue1);
+
+    font-size:35px;
+}
+
+
+.service-navigation-intro p{
+
+    color:var(--grey);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
 
 
 .service-tabs{
@@ -189,564 +307,1105 @@ a{
 
     flex-wrap:wrap;
 
-    gap:15px;
+    gap:10px;
 
-    margin-bottom:45px;
-
+    margin-top:30px;
 }
 
 
+.service-tab{
 
-.tab{
+    border:
+    1px solid #dce5f0;
 
-    border:none;
+    background:#f8faff;
 
-    background:white;
+    color:var(--blue1);
 
-    padding:12px 25px;
+    padding:11px 23px;
 
     border-radius:30px;
 
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:700;
+
     cursor:pointer;
 
-    font-weight:600;
-
-    color:#0b3c8a;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
+    transition:.3s;
 }
 
 
+.service-tab:hover{
 
-.tab.active{
+    border-color:var(--blue2);
 
-    background:#0b3c8a;
+    transform:translateY(-2px);
+}
+
+
+.service-tab.active{
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1),
+        var(--blue2)
+    );
+
+    border-color:transparent;
 
     color:white;
-
 }
-
-
-
-
 
 
 /* ==========================================
-   SERVICE GRID
+   SERVICE OVERVIEW
 ========================================== */
 
+.service-overview{
 
-.services-grid{
+    padding:65px 22px 90px;
+
+    background:white;
+}
+
+
+.service-overview-grid{
+
+    max-width:1100px;
+
+    margin:auto;
 
     display:grid;
 
     grid-template-columns:
+    repeat(4,1fr);
 
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
+    gap:20px;
 }
 
 
+.overview-card{
 
-
-
-
-/* ==========================================
-   SERVICE CARD
-========================================== */
-
-
-.service-card{
-
-    background:white;
-
-    padding:35px 30px;
+    padding:27px;
 
     border-radius:15px;
 
-    text-align:center;
+    background:#f8faff;
+
+    border:
+    1px solid #e5ebf4;
+}
+
+
+.overview-card > span{
+
+    color:var(--blue2);
+
+    font-size:11px;
+
+    font-weight:700;
+}
+
+
+.overview-card h3{
+
+    margin:12px 0 8px;
+
+    color:var(--blue1);
+
+    font-size:17px;
+}
+
+
+.overview-card p{
+
+    margin:0;
+
+    color:var(--grey);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================
+   CATEGORY SECTIONS
+========================================== */
+
+.service-category-section{
+
+    scroll-margin-top:25px;
+
+    padding:90px 22px;
+
+    background:white;
+
+    transition:
+    background-color .6s ease;
+}
+
+
+.service-category-section.alternate-section{
+
+    background:var(--light);
+}
+
+
+.service-category-section.tab-highlight{
+
+    animation:
+    serviceHighlight
+    1.4s ease;
+}
+
+
+@keyframes serviceHighlight{
+
+    0%{
+        box-shadow:
+        inset 0 0 0 9999px
+        rgba(30,115,216,.09);
+    }
+
+    100%{
+        box-shadow:
+        inset 0 0 0 9999px
+        rgba(30,115,216,0);
+    }
+
+}
+
+
+.category-heading{
+
+    max-width:1200px;
+
+    margin:0 auto 45px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:30px;
+}
+
+
+.category-heading > div{
+
+    max-width:720px;
+}
+
+
+.category-number{
+
+    color:#9bbbea;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    margin-right:9px;
+}
+
+
+.category-label{
+
+    color:var(--blue2);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+}
+
+
+.category-heading h2{
+
+    margin:9px 0 10px;
+
+    color:var(--blue1);
+
+    font-size:34px;
+}
+
+
+.category-heading p{
+
+    margin:0;
+
+    color:var(--grey);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+.category-heading > a{
+
+    color:var(--blue2);
+
+    font-size:13px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+/* ==========================================
+   SERVICE CARDS
+========================================== */
+
+.service-card-grid{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+.detailed-service-card{
+
+    padding:32px 28px;
+
+    border-radius:18px;
+
+    background:white;
+
+    border:
+    1px solid #e6ebf2;
 
     box-shadow:
-
-    0 10px 30px rgba(0,0,0,.08);
+    0 8px 25px rgba(0,0,0,.05);
 
     transition:.35s;
-
 }
 
 
+.alternate-section
+.detailed-service-card{
 
-.service-card:hover{
-
-    transform:translateY(-8px);
-
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.07);
 }
 
 
+.detailed-service-card:hover{
 
-.service-image{
+    transform:translateY(-7px);
 
-    width:65px;
+    box-shadow:var(--shadow);
+}
 
-    height:65px;
+
+.service-icon-image{
+
+    width:60px;
+
+    height:60px;
 
     object-fit:contain;
 
     margin-bottom:20px;
-
 }
 
 
+.detailed-service-card h3{
 
-.service-card h3{
+    margin:0 0 12px;
 
-    color:#0b3c8a;
+    color:var(--blue1);
 
-    font-size:22px;
-
-    margin-bottom:15px;
-
+    font-size:20px;
 }
 
 
+.detailed-service-card > p{
 
-.service-card p{
+    margin:0 0 18px;
 
-    color:#666;
+    color:var(--grey);
 
-    line-height:1.7;
+    font-size:13px;
 
+    line-height:1.75;
 }
 
 
-
-.service-card ul{
+.detailed-service-card ul{
 
     list-style:none;
 
     padding:0;
 
-    margin:20px 0;
-
+    margin:0 0 22px;
 }
 
 
+.detailed-service-card li{
 
-.service-card li{
+    position:relative;
+
+    padding-left:20px;
 
     margin:8px 0;
 
-    font-size:14px;
+    color:#4f5967;
 
+    font-size:12px;
 }
 
 
+.detailed-service-card li::before{
 
-.service-card li::before{
+    content:"✓";
 
-    content:"✓ ";
+    position:absolute;
 
-    color:#c5a334;
+    left:0;
 
-    font-weight:bold;
+    color:var(--blue2);
 
+    font-weight:700;
 }
 
 
+.detailed-service-card > a{
 
-.service-card a{
+    color:var(--blue2);
 
-    color:#0b3c8a;
+    font-size:13px;
 
-    font-weight:600;
-
+    font-weight:700;
 }
-
-
-
-
 
 
 /* ==========================================
-   WHY CHOOSE US
+   WHY
 ========================================== */
 
+.services-why{
 
-.why-section{
-
-    background:white;
-
-    padding:80px 5%;
-
-    text-align:center;
-
-}
-
-
-
-.why-section h2{
-
-    color:#0b3c8a;
-
-    font-size:36px;
-
-}
-
-
-
-.why-grid{
-
-    margin-top:45px;
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fit,minmax(230px,1fr));
-
-    gap:25px;
-
-}
-
-
-
-.why-card{
-
-    padding:30px;
-
-    border-radius:15px;
-
-    background:#f8f9fb;
-
-}
-
-
-
-.why-card img{
-
-    width:55px;
-
-    height:55px;
-
-    object-fit:contain;
-
-}
-
-
-
-.why-card h3{
-
-    color:#0b3c8a;
-
-}
-
-
-
-
-
-
-
-/* ==========================================
-   PROCESS SECTION
-========================================== */
-
-
-.process-section{
-
-    padding:80px 5%;
-
-    text-align:center;
-
-}
-
-
-
-.process-section h2{
-
-    color:#0b3c8a;
-
-    font-size:36px;
-
-}
-
-
-
-.process-grid{
-
-    margin-top:40px;
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(auto-fit,minmax(220px,1fr));
-
-    gap:25px;
-
-}
-
-
-
-.process-card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:15px;
-
-    box-shadow:
-
-    0 8px 20px rgba(0,0,0,.08);
-
-}
-
-
-
-.process-card span{
-
-    display:inline-flex;
-
-    width:45px;
-
-    height:45px;
-
-    justify-content:center;
-
-    align-items:center;
-
-    border-radius:50%;
-
-    background:#0b3c8a;
+    padding:90px 22px;
 
     color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #082e6d,
+        #0b4b9d,
+        var(--blue2)
+    );
+}
+
+
+.services-why-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:.85fr 1.15fr;
+
+    gap:60px;
+}
+
+
+.services-why-copy > span{
+
+    color:#cfe2ff;
+
+    font-size:11px;
 
     font-weight:700;
 
+    letter-spacing:1.4px;
 }
 
 
+.services-why-copy h2{
 
-.process-card h3{
-
-    color:#0b3c8a;
-
-}
-
-
-
-
-
-
-
-/* ==========================================
-   CTA SECTION
-========================================== */
-
-
-.service-cta{
-
-    background:
-
-    linear-gradient(
-
-    135deg,
-
-    #0b3c8a,
-
-    #1e73d8
-
-    );
-
-    padding:70px 20px;
-
-    text-align:center;
-
-    color:white;
-
-}
-
-
-
-.service-cta h2{
+    margin:8px 0 16px;
 
     font-size:36px;
 
+    line-height:1.25;
 }
 
 
+.services-why-copy p{
 
-.service-cta p{
+    color:#dceaff;
 
-    font-size:17px;
+    font-size:14px;
 
-    margin-bottom:30px;
-
+    line-height:1.8;
 }
 
 
-
-.service-cta a{
-
-    background:#c5a334;
+.services-why-copy a{
 
     color:white;
 
-    padding:15px 35px;
+    font-size:13px;
 
-    border-radius:30px;
-
-    font-weight:600;
-
+    font-weight:700;
 }
 
 
+.services-benefits{
 
+    display:grid;
 
+    grid-template-columns:1fr 1fr;
 
-
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-
-.footer-logo{
-
-    width:140px;
-
-    margin-bottom:15px;
-
+    gap:18px;
 }
 
 
-
-
-
-
-/* ==========================================
-   WHATSAPP FLOAT BUTTON
-========================================== */
-
-
-.whatsapp{
-
-    position:fixed;
-
-    bottom:25px;
-
-    right:25px;
-
-    background:#25d366;
-
-    color:white;
-
-    padding:15px 22px;
-
-    border-radius:50px;
-
-    font-weight:600;
-
-    box-shadow:
-
-    0 5px 15px rgba(0,0,0,.2);
-
-    z-index:100;
-
-}
-
-
-
-
-
-
-
-/* ==========================================
-   MOBILE RESPONSIVE
-========================================== */
-
-
-@media(max-width:768px){
-
-
-.service-hero{
-
-    height:420px;
-
-}
-
-
-
-.service-hero-content h1{
-
-    font-size:32px;
-
-}
-
-
-
-.service-hero-content p{
-
-    font-size:15px;
-
-}
-
-
-
-.services-intro h2,
-.why-section h2,
-.process-section h2{
-
-    font-size:28px;
-
-}
-
-
-
-.service-card{
+.benefit-card{
 
     padding:25px;
 
+    border-radius:15px;
+
+    background:
+    rgba(255,255,255,.09);
+
+    border:
+    1px solid rgba(255,255,255,.13);
 }
 
 
+.benefit-card strong{
 
-.service-tabs{
+    color:#9ec8ff;
 
-    gap:10px;
+    font-size:11px;
+}
+
+
+.benefit-card h3{
+
+    margin:10px 0 7px;
+
+    font-size:17px;
+}
+
+
+.benefit-card p{
+
+    margin:0;
+
+    color:#dceaff;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================
+   PROCESS
+========================================== */
+
+.services-process{
+
+    padding:90px 22px;
+
+    background:white;
+}
+
+
+.services-process-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:22px;
+}
+
+
+.process-item{
+
+    padding:28px 22px;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    background:#f8faff;
+
+    border:
+    1px solid #e5ebf4;
+}
+
+
+.process-item > span{
+
+    display:flex;
+
+    width:44px;
+
+    height:44px;
+
+    margin:0 auto 17px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1),
+        var(--blue2)
+    );
+}
+
+
+.process-item h3{
+
+    margin:0 0 8px;
+
+    color:var(--blue1);
+
+    font-size:17px;
+}
+
+
+.process-item p{
+
+    margin:0;
+
+    color:var(--grey);
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================
+   CTA
+========================================== */
+
+.services-cta{
+
+    max-width:1200px;
+
+    margin:20px auto 70px;
+
+    padding:42px 38px;
+
+    border-radius:20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--blue1),
+        var(--blue2),
+        var(--blue3)
+    );
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:35px;
+}
+
+
+.services-cta > div:first-child{
+
+    max-width:680px;
+}
+
+
+.services-cta span{
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.4px;
+}
+
+
+.services-cta h2{
+
+    margin:7px 0 8px;
+
+    font-size:29px;
+}
+
+
+.services-cta p{
+
+    margin:0;
+
+    color:#e6f0ff;
+
+    font-size:13px;
+}
+
+
+.services-cta-buttons{
+
+    display:flex;
+
+    gap:11px;
+}
+
+
+.services-cta-primary,
+.services-cta-secondary{
+
+    padding:13px 22px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+.services-cta-primary{
+
+    background:white;
+
+    color:var(--blue1);
+}
+
+
+.services-cta-secondary{
+
+    background:var(--green);
+
+    color:white;
+}
+
+
+/* ==========================================
+   FOOTER BRAND
+========================================== */
+
+.footer-brand-services{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:14px;
+}
+
+
+.footer-brand-services img{
+
+    height:60px;
+
+    width:auto;
+}
+
+
+.footer-brand-services h3{
+
+    margin:0;
+}
+
+
+.footer-brand-services span{
+
+    color:#9aa6b7;
+
+    font-size:11px;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:1050px){
+
+    .service-card-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+
+    .service-overview-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+
+    .services-process-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
 
 }
 
 
+/* ==========================================
+   MOBILE NAV
+========================================== */
 
-.tab{
+@media(max-width:900px){
 
-    padding:10px 18px;
+    .services-brand img{
+
+        height:60px;
+    }
+
+
+    .services-brand-text{
+
+        display:none;
+    }
+
+
+    .menu-toggle{
+
+        display:block;
+    }
+
+
+    .services-navbar .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:78px;
+
+        left:0;
+
+        right:0;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:4px;
+
+        padding:20px;
+
+        border-radius:13px;
+
+        background:white;
+
+        box-shadow:
+        0 12px 35px rgba(0,0,0,.17);
+
+        z-index:100;
+    }
+
+
+    .services-navbar .nav-links.active{
+
+        display:flex;
+    }
+
+
+    .services-navbar .nav-links li{
+
+        width:100%;
+    }
+
+
+    .services-navbar .nav-links a{
+
+        display:block;
+
+        width:100%;
+
+        padding:9px 5px;
+
+        color:var(--blue1);
+    }
+
+
+    .services-navbar .nav-links a.active{
+
+        border:none;
+
+        background:#edf4ff;
+
+        border-radius:7px;
+
+        padding:9px 10px;
+    }
+
+
+    .services-navbar .nav-book{
+
+        width:100%;
+
+        margin-top:7px;
+
+        background:var(--blue1);
+
+        color:white !important;
+
+        text-align:center;
+    }
+
+
+    .services-why-container{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .services-cta{
+
+        margin-left:22px;
+
+        margin-right:22px;
+
+        flex-direction:column;
+
+        text-align:center;
+    }
 
 }
 
 
-}
-/* SERVICE CARD ANIMATION */
+/* ==========================================
+   SMALL MOBILE
+========================================== */
 
-.service-card.hidden{
+@media(max-width:600px){
 
-    opacity:0;
+    .services-page-header{
 
-    transform:translateY(40px);
+        padding:
+        14px
+        18px
+        55px;
+    }
 
-}
+
+    .services-brand img{
+
+        height:55px;
+    }
 
 
-.service-card.show{
+    .services-hero{
 
-    opacity:1;
+        margin-top:48px;
+    }
 
-    transform:translateY(0);
 
-    transition:.6s ease;
+    .services-hero h1{
+
+        font-size:31px;
+    }
+
+
+    .services-hero p{
+
+        font-size:14px;
+    }
+
+
+    .services-hero-actions{
+
+        flex-direction:column;
+    }
+
+
+    .services-primary-btn,
+    .services-secondary-btn{
+
+        width:100%;
+    }
+
+
+    .service-navigation-section{
+
+        padding:
+        55px
+        18px
+        35px;
+    }
+
+
+    .service-navigation-intro h2{
+
+        font-size:28px;
+    }
+
+
+    .service-tabs{
+
+        display:grid;
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+
+    .service-tab:first-child{
+
+        grid-column:1 / -1;
+    }
+
+
+    .service-overview{
+
+        padding:
+        50px
+        18px
+        65px;
+    }
+
+
+    .service-overview-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .service-category-section{
+
+        padding:
+        65px
+        18px;
+    }
+
+
+    .category-heading{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    .category-heading h2{
+
+        font-size:28px;
+    }
+
+
+    .service-card-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .services-why{
+
+        padding:
+        70px
+        18px;
+    }
+
+
+    .services-why-copy h2{
+
+        font-size:29px;
+    }
+
+
+    .services-benefits{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .services-process{
+
+        padding:
+        65px
+        18px;
+    }
+
+
+    .services-process-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .services-cta{
+
+        margin:
+        15px
+        18px
+        50px;
+
+        padding:
+        32px
+        22px;
+    }
+
+
+    .services-cta h2{
+
+        font-size:25px;
+    }
+
+
+    .services-cta-buttons{
+
+        width:100%;
+
+        flex-direction:column;
+    }
+
+
+    .services-cta-primary,
+    .services-cta-secondary{
+
+        width:100%;
+
+        text-align:center;
+    }
 
 }
