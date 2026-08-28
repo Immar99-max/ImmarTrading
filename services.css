@@ -1409,3 +1409,20 @@
     }
 
 }
+/* ==========================================
+   JS CARD ANIMATIONS
+========================================== */
+
+.service-card-hidden{
+    opacity:0;
+    transform:translateY(25px);
+}
+
+.service-card-visible{
+    opacity:1;
+    transform:translateY(0);
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+}
