@@ -1,287 +1,223 @@
-/* ==========================================
-   IMMAR TRADING SERVICES
-========================================== */
+/* =====================================================
+   IMMAR TRADING SERVICES PAGE
+===================================================== */
 
 :root{
     --blue1:#0b3c8a;
     --blue2:#1e73d8;
     --blue3:#4fa3ff;
-
-    --white:#ffffff;
+    --white:#fff;
     --light:#f5f7fb;
-    --light-blue:#edf4ff;
-
+    --lightblue:#edf4ff;
     --dark:#172033;
     --grey:#667085;
-
-    --green:#25D366;
-
-    --shadow:0 12px 35px rgba(0,0,0,.09);
+    --green:#25d366;
+    --shadow:0 12px 35px rgba(0,0,0,.08);
 }
 
 
-/* ==========================================
+/* =====================================================
    HEADER
-========================================== */
+===================================================== */
 
-.services-page-header{
-
-    background:
-    linear-gradient(
+.services-header{
+    background:linear-gradient(
         135deg,
         var(--blue1),
         var(--blue2) 60%,
         var(--blue3)
     );
 
-    color:white;
-
+    color:#fff;
     padding:18px 22px 75px;
 }
 
 
 .services-navbar{
-
     max-width:1250px;
-
     margin:auto;
 
     display:flex;
-
-    align-items:center;
-
     justify-content:space-between;
+    align-items:center;
 
     position:relative;
 }
 
 
 .services-brand a{
-
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
-    color:white;
+    color:#fff;
 }
 
 
 .services-brand img{
-
     height:75px;
-
     width:auto;
 }
 
 
 .services-brand-text{
-
     display:flex;
-
     flex-direction:column;
 }
 
 
 .services-brand-text strong{
-
     font-size:18px;
 }
 
 
 .services-brand-text span{
-
-    color:#e5efff;
-
     font-size:11px;
+    color:#e3efff;
 }
 
 
 .services-navbar .nav-links{
-
     display:flex;
-
     align-items:center;
-
     gap:25px;
 
     list-style:none;
-
-    margin:0;
-
     padding:0;
+    margin:0;
 }
 
 
 .services-navbar .nav-links a{
-
-    color:white;
-
+    color:#fff;
     font-size:14px;
-
     font-weight:600;
 }
 
 
 .services-navbar .nav-links a.active{
-
-    border-bottom:2px solid white;
-
+    border-bottom:2px solid #fff;
     padding-bottom:5px;
 }
 
 
 .services-navbar .nav-book{
-
-    background:white;
-
+    background:#fff;
     color:var(--blue1) !important;
 
     padding:11px 22px;
-
     border-radius:30px;
 }
 
 
-/* ==========================================
+
+/* =====================================================
    HERO
-========================================== */
+===================================================== */
 
 .services-hero{
-
     max-width:850px;
-
     margin:70px auto 0;
-
-    padding:0 20px;
-
     text-align:center;
 }
 
 
-.services-hero-tag{
-
+.hero-label{
     display:inline-block;
 
     padding:8px 17px;
 
+    border:1px solid rgba(255,255,255,.3);
     border-radius:30px;
 
-    background:rgba(255,255,255,.14);
+    background:rgba(255,255,255,.12);
 
-    border:
-    1px solid rgba(255,255,255,.28);
-
-    font-size:12px;
-
+    font-size:11px;
+    font-weight:700;
     letter-spacing:1.5px;
 }
 
 
 .services-hero h1{
-
-    margin:18px 0 15px;
-
+    margin:18px 0 16px;
     font-size:48px;
-
-    line-height:1.2;
+    line-height:1.18;
 }
 
 
 .services-hero p{
-
-    max-width:700px;
-
+    max-width:720px;
     margin:auto;
 
-    color:#e8f2ff;
+    color:#e7f1ff;
 
     font-size:15px;
-
     line-height:1.8;
 }
 
 
-.services-hero-actions{
-
+.hero-buttons{
     margin-top:30px;
 
     display:flex;
-
     justify-content:center;
-
     gap:14px;
 }
 
 
-.services-primary-btn,
-.services-secondary-btn{
-
-    padding:13px 27px;
-
+.hero-primary,
+.hero-secondary{
+    padding:14px 28px;
     border-radius:30px;
 
     font-size:14px;
-
     font-weight:700;
 }
 
 
-.services-primary-btn{
-
-    background:white;
-
+.hero-primary{
+    background:#fff;
     color:var(--blue1);
 }
 
 
-.services-secondary-btn{
-
-    border:
-    1px solid rgba(255,255,255,.7);
-
-    color:white;
+.hero-secondary{
+    border:1px solid rgba(255,255,255,.7);
+    color:#fff;
 }
 
 
-/* ==========================================
-   SERVICE NAVIGATION
-========================================== */
 
-.service-navigation-section{
+/* =====================================================
+   TAB NAVIGATION
+===================================================== */
 
-    padding:70px 22px 45px;
-
-    background:white;
+.service-navigation{
+    background:#fff;
+    padding:70px 20px 50px;
 
     text-align:center;
+
+    scroll-margin-top:25px;
 }
 
 
-.service-navigation-intro{
-
-    max-width:700px;
-
+.service-nav-heading{
+    max-width:720px;
     margin:auto;
 }
 
 
-.service-navigation-intro > span{
-
+.service-nav-heading > span{
     color:var(--blue2);
 
     font-size:11px;
-
     font-weight:700;
-
-    letter-spacing:1.5px;
+    letter-spacing:1.4px;
 }
 
 
-.service-navigation-intro h2{
-
-    margin:6px 0 12px;
+.service-nav-heading h2{
+    margin:7px 0 10px;
 
     color:var(--blue1);
 
@@ -289,67 +225,53 @@
 }
 
 
-.service-navigation-intro p{
+.service-nav-heading p{
+    margin:0;
 
     color:var(--grey);
 
     font-size:14px;
-
-    line-height:1.8;
+    line-height:1.75;
 }
 
 
 .service-tabs{
-
     display:flex;
-
     justify-content:center;
-
-    flex-wrap:wrap;
-
     gap:10px;
+    flex-wrap:wrap;
 
     margin-top:30px;
 }
 
 
 .service-tab{
+    display:inline-block;
 
-    border:
-    1px solid #dce5f0;
-
-    background:#f8faff;
-
-    color:var(--blue1);
-
-    padding:11px 23px;
+    border:1px solid #dbe4ef;
 
     border-radius:30px;
 
-    font-family:inherit;
+    padding:11px 23px;
+
+    background:#f7f9fd;
+    color:var(--blue1);
 
     font-size:13px;
-
     font-weight:700;
 
-    cursor:pointer;
-
-    transition:.3s;
+    transition:.25s;
 }
 
 
 .service-tab:hover{
-
     border-color:var(--blue2);
-
     transform:translateY(-2px);
 }
 
 
 .service-tab.active{
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         var(--blue1),
         var(--blue2)
@@ -357,178 +279,177 @@
 
     border-color:transparent;
 
-    color:white;
+    color:#fff;
 }
 
 
-/* ==========================================
-   SERVICE OVERVIEW
-========================================== */
 
-.service-overview{
+/* =====================================================
+   SHARED HEADING
+===================================================== */
 
-    padding:65px 22px 90px;
-
-    background:white;
+.section-heading{
+    max-width:760px;
+    margin:0 auto 50px;
+    text-align:center;
 }
 
 
-.service-overview-grid{
+.section-label{
+    color:var(--blue2);
 
-    max-width:1100px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
 
+
+.section-heading h2{
+    margin:7px 0 12px;
+
+    color:var(--blue1);
+
+    font-size:36px;
+}
+
+
+.section-heading p{
+    color:var(--grey);
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+
+
+/* =====================================================
+   OVERVIEW
+===================================================== */
+
+.services-introduction{
+    background:#fff;
+
+    padding:50px 22px 90px;
+
+    scroll-margin-top:30px;
+}
+
+
+.overview-grid{
+    max-width:1150px;
     margin:auto;
 
     display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
     gap:20px;
 }
 
 
 .overview-card{
-
     padding:27px;
 
-    border-radius:15px;
+    border-radius:16px;
+
+    border:1px solid #e4eaf2;
 
     background:#f8faff;
 
-    border:
-    1px solid #e5ebf4;
+    transition:.3s;
 }
 
 
-.overview-card > span{
+.overview-card:hover{
+    transform:translateY(-5px);
+    background:#fff;
+    box-shadow:var(--shadow);
+}
 
+
+.overview-number{
     color:var(--blue2);
 
     font-size:11px;
-
     font-weight:700;
 }
 
 
 .overview-card h3{
-
-    margin:12px 0 8px;
-
     color:var(--blue1);
 
-    font-size:17px;
+    margin:12px 0 8px;
 }
 
 
 .overview-card p{
-
-    margin:0;
-
     color:var(--grey);
 
     font-size:12px;
-
     line-height:1.7;
 }
 
 
-/* ==========================================
-   CATEGORY SECTIONS
-========================================== */
+.overview-card a{
+    color:var(--blue2);
 
-.service-category-section{
-
-    scroll-margin-top:25px;
-
-    padding:90px 22px;
-
-    background:white;
-
-    transition:
-    background-color .6s ease;
+    font-size:12px;
+    font-weight:700;
 }
 
 
-.service-category-section.alternate-section{
 
+/* =====================================================
+   CATEGORY SECTIONS
+===================================================== */
+
+.service-category{
+    padding:90px 22px;
+
+    background:#fff;
+
+    scroll-margin-top:25px;
+}
+
+
+.service-category.alternate{
     background:var(--light);
 }
 
 
-.service-category-section.tab-highlight{
-
-    animation:
-    serviceHighlight
-    1.4s ease;
-}
-
-
-@keyframes serviceHighlight{
-
-    0%{
-        box-shadow:
-        inset 0 0 0 9999px
-        rgba(30,115,216,.09);
-    }
-
-    100%{
-        box-shadow:
-        inset 0 0 0 9999px
-        rgba(30,115,216,0);
-    }
-
-}
-
-
 .category-heading{
-
     max-width:1200px;
-
     margin:0 auto 45px;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:flex-end;
 
-    gap:30px;
+    gap:35px;
 }
 
 
 .category-heading > div{
-
     max-width:720px;
 }
 
 
-.category-number{
-
-    color:#9bbbea;
-
-    font-size:12px;
-
-    font-weight:700;
-
-    margin-right:9px;
-}
-
-
-.category-label{
-
+.category-top{
     color:var(--blue2);
 
     font-size:11px;
-
     font-weight:700;
+    letter-spacing:1.4px;
+}
 
-    letter-spacing:1.5px;
+
+.category-top span{
+    color:#9ab7db;
+    margin-right:10px;
 }
 
 
 .category-heading h2{
-
     margin:9px 0 10px;
 
     color:var(--blue1);
@@ -538,411 +459,297 @@
 
 
 .category-heading p{
-
     margin:0;
 
     color:var(--grey);
 
     font-size:14px;
-
     line-height:1.8;
 }
 
 
 .category-heading > a{
-
     color:var(--blue2);
 
     font-size:13px;
-
     font-weight:700;
 
     white-space:nowrap;
 }
 
 
-/* ==========================================
+
+/* =====================================================
    SERVICE CARDS
-========================================== */
+===================================================== */
 
-.service-card-grid{
-
+.service-grid{
     max-width:1200px;
-
     margin:auto;
 
     display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
 
     gap:25px;
 }
 
 
-.detailed-service-card{
+.service-card{
+    background:#fff;
 
-    padding:32px 28px;
+    border:1px solid #e5eaf1;
 
     border-radius:18px;
 
-    background:white;
+    padding:30px 28px;
 
-    border:
-    1px solid #e6ebf2;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
 
-    box-shadow:
-    0 8px 25px rgba(0,0,0,.05);
-
-    transition:.35s;
+    transition:.3s;
 }
 
 
-.alternate-section
-.detailed-service-card{
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.07);
-}
-
-
-.detailed-service-card:hover{
-
-    transform:translateY(-7px);
+.service-card:hover{
+    transform:translateY(-6px);
 
     box-shadow:var(--shadow);
 }
 
 
-.service-icon-image{
+.service-icon{
+    width:58px;
+    height:58px;
 
-    width:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    height:60px;
+    background:var(--lightblue);
 
-    object-fit:contain;
+    border-radius:15px;
+
+    font-size:27px;
 
     margin-bottom:20px;
 }
 
 
-.detailed-service-card h3{
-
-    margin:0 0 12px;
+.service-card h3{
+    margin:0 0 11px;
 
     color:var(--blue1);
 
-    font-size:20px;
+    font-size:19px;
 }
 
 
-.detailed-service-card > p{
-
-    margin:0 0 18px;
-
+.service-card > p{
     color:var(--grey);
 
     font-size:13px;
-
     line-height:1.75;
 }
 
 
-.detailed-service-card ul{
-
-    list-style:none;
-
+.service-card ul{
+    margin:18px 0 22px;
     padding:0;
 
-    margin:0 0 22px;
+    list-style:none;
 }
 
 
-.detailed-service-card li{
-
+.service-card li{
     position:relative;
 
     padding-left:20px;
-
     margin:8px 0;
 
-    color:#4f5967;
+    color:#535e6e;
 
     font-size:12px;
 }
 
 
-.detailed-service-card li::before{
-
+.service-card li::before{
     content:"✓";
 
     position:absolute;
-
     left:0;
 
     color:var(--blue2);
-
     font-weight:700;
 }
 
 
-.detailed-service-card > a{
-
+.service-card > a{
     color:var(--blue2);
 
     font-size:13px;
-
     font-weight:700;
 }
 
 
-/* ==========================================
+
+/* =====================================================
+   SECTION HIGHLIGHT
+===================================================== */
+
+.service-highlight{
+    animation:sectionFlash 1.1s ease;
+}
+
+
+@keyframes sectionFlash{
+
+    0%{
+        box-shadow:
+        inset 0 0 0 1000px
+        rgba(30,115,216,.09);
+    }
+
+    100%{
+        box-shadow:
+        inset 0 0 0 1000px
+        rgba(30,115,216,0);
+    }
+
+}
+
+
+
+/* =====================================================
    WHY
-========================================== */
+===================================================== */
 
 .services-why{
-
     padding:90px 22px;
 
-    color:white;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #082e6d,
         #0b4b9d,
         var(--blue2)
     );
+
+    color:#fff;
 }
 
 
-.services-why-container{
-
+.why-container{
     max-width:1200px;
-
     margin:auto;
 
     display:grid;
-
     grid-template-columns:.85fr 1.15fr;
 
     gap:60px;
 }
 
 
-.services-why-copy > span{
-
-    color:#cfe2ff;
+.why-copy > span{
+    color:#cde2ff;
 
     font-size:11px;
-
     font-weight:700;
-
     letter-spacing:1.4px;
 }
 
 
-.services-why-copy h2{
+.why-copy h2{
+    font-size:36px;
+    line-height:1.25;
 
     margin:8px 0 16px;
-
-    font-size:36px;
-
-    line-height:1.25;
 }
 
 
-.services-why-copy p{
-
-    color:#dceaff;
+.why-copy p{
+    color:#dae9ff;
 
     font-size:14px;
-
     line-height:1.8;
 }
 
 
-.services-why-copy a{
-
-    color:white;
-
-    font-size:13px;
-
+.why-copy a{
+    color:#fff;
     font-weight:700;
+    font-size:13px;
 }
 
 
-.services-benefits{
-
+.why-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
 
     gap:18px;
 }
 
 
-.benefit-card{
-
+.why-card{
     padding:25px;
 
     border-radius:15px;
 
-    background:
-    rgba(255,255,255,.09);
+    background:rgba(255,255,255,.09);
 
-    border:
-    1px solid rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.13);
 }
 
 
-.benefit-card strong{
-
-    color:#9ec8ff;
-
+.why-card strong{
+    color:#9bc8ff;
     font-size:11px;
 }
 
 
-.benefit-card h3{
-
+.why-card h3{
     margin:10px 0 7px;
-
-    font-size:17px;
 }
 
 
-.benefit-card p{
-
+.why-card p{
     margin:0;
 
-    color:#dceaff;
+    color:#d9e8ff;
 
     font-size:12px;
-
     line-height:1.7;
 }
 
 
-/* ==========================================
-   PROCESS
-========================================== */
 
-.services-process{
-
-    padding:90px 22px;
-
-    background:white;
-}
-
-
-.services-process-grid{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:22px;
-}
-
-
-.process-item{
-
-    padding:28px 22px;
-
-    text-align:center;
-
-    border-radius:16px;
-
-    background:#f8faff;
-
-    border:
-    1px solid #e5ebf4;
-}
-
-
-.process-item > span{
-
-    display:flex;
-
-    width:44px;
-
-    height:44px;
-
-    margin:0 auto 17px;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    color:white;
-
-    background:
-    linear-gradient(
-        135deg,
-        var(--blue1),
-        var(--blue2)
-    );
-}
-
-
-.process-item h3{
-
-    margin:0 0 8px;
-
-    color:var(--blue1);
-
-    font-size:17px;
-}
-
-
-.process-item p{
-
-    margin:0;
-
-    color:var(--grey);
-
-    font-size:12px;
-
-    line-height:1.7;
-}
-
-
-/* ==========================================
+/* =====================================================
    CTA
-========================================== */
+===================================================== */
+
+.services-cta-wrap{
+    padding:65px 22px;
+
+    background:var(--light);
+}
+
 
 .services-cta{
-
     max-width:1200px;
-
-    margin:20px auto 70px;
+    margin:auto;
 
     padding:42px 38px;
 
     border-radius:20px;
 
-    background:
-    linear-gradient(
+    color:#fff;
+
+    background:linear-gradient(
         135deg,
         var(--blue1),
         var(--blue2),
         var(--blue3)
     );
 
-    color:white;
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     gap:35px;
@@ -950,23 +757,18 @@
 
 
 .services-cta > div:first-child{
-
-    max-width:680px;
+    max-width:700px;
 }
 
 
 .services-cta span{
-
     font-size:11px;
-
     font-weight:700;
-
     letter-spacing:1.4px;
 }
 
 
 .services-cta h2{
-
     margin:7px 0 8px;
 
     font-size:29px;
@@ -974,62 +776,51 @@
 
 
 .services-cta p{
+    color:#e5f0ff;
 
     margin:0;
-
-    color:#e6f0ff;
-
     font-size:13px;
 }
 
 
-.services-cta-buttons{
-
+.cta-buttons{
     display:flex;
-
-    gap:11px;
+    gap:12px;
 }
 
 
-.services-cta-primary,
-.services-cta-secondary{
-
+.cta-fleet,
+.cta-whatsapp{
     padding:13px 22px;
 
     border-radius:30px;
 
     font-size:13px;
-
     font-weight:700;
 
     white-space:nowrap;
 }
 
 
-.services-cta-primary{
-
-    background:white;
-
+.cta-fleet{
     color:var(--blue1);
+    background:#fff;
 }
 
 
-.services-cta-secondary{
-
+.cta-whatsapp{
+    color:#fff;
     background:var(--green);
-
-    color:white;
 }
 
 
-/* ==========================================
-   FOOTER BRAND
-========================================== */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer-brand-services{
-
     display:flex;
-
     align-items:center;
 
     gap:14px;
@@ -1039,390 +830,288 @@
 
 
 .footer-brand-services img{
-
     height:60px;
-
-    width:auto;
 }
 
 
 .footer-brand-services h3{
-
     margin:0;
 }
 
 
 .footer-brand-services span{
-
-    color:#9aa6b7;
-
+    color:#9da8b9;
     font-size:11px;
 }
 
 
-/* ==========================================
+
+/* =====================================================
    TABLET
-========================================== */
+===================================================== */
 
 @media(max-width:1050px){
 
-    .service-card-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
+    .overview-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-
-    .service-overview-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-    }
-
-
-    .services-process-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
 }
 
 
-/* ==========================================
+
+/* =====================================================
    MOBILE NAV
-========================================== */
+===================================================== */
 
 @media(max-width:900px){
 
     .services-brand img{
-
         height:60px;
     }
 
 
     .services-brand-text{
-
         display:none;
     }
 
 
     .menu-toggle{
-
         display:block;
     }
 
 
     .services-navbar .nav-links{
-
         display:none;
 
         position:absolute;
 
-        top:78px;
-
+        top:75px;
         left:0;
-
         right:0;
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:4px;
 
         padding:20px;
 
-        border-radius:13px;
+        flex-direction:column;
+        align-items:flex-start;
 
-        background:white;
+        gap:3px;
 
-        box-shadow:
-        0 12px 35px rgba(0,0,0,.17);
+        background:#fff;
 
-        z-index:100;
+        border-radius:14px;
+
+        box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+        z-index:999;
     }
 
 
     .services-navbar .nav-links.active{
-
         display:flex;
     }
 
 
     .services-navbar .nav-links li{
-
         width:100%;
     }
 
 
     .services-navbar .nav-links a{
-
+        width:100%;
         display:block;
 
-        width:100%;
-
-        padding:9px 5px;
-
         color:var(--blue1);
+
+        padding:9px;
     }
 
 
     .services-navbar .nav-links a.active{
-
         border:none;
 
-        background:#edf4ff;
+        background:var(--lightblue);
 
-        border-radius:7px;
-
-        padding:9px 10px;
+        border-radius:8px;
     }
 
 
     .services-navbar .nav-book{
-
         width:100%;
 
-        margin-top:7px;
+        color:#fff !important;
 
         background:var(--blue1);
-
-        color:white !important;
 
         text-align:center;
     }
 
 
-    .services-why-container{
-
+    .why-container{
         grid-template-columns:1fr;
     }
 
 
     .services-cta{
-
-        margin-left:22px;
-
-        margin-right:22px;
-
         flex-direction:column;
-
         text-align:center;
     }
 
 }
 
 
-/* ==========================================
-   SMALL MOBILE
-========================================== */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:600px){
 
-    .services-page-header{
-
-        padding:
-        14px
-        18px
-        55px;
+    .services-header{
+        padding:14px 18px 55px;
     }
 
 
     .services-brand img{
-
         height:55px;
     }
 
 
     .services-hero{
-
         margin-top:48px;
     }
 
 
     .services-hero h1{
-
         font-size:31px;
     }
 
 
     .services-hero p{
-
         font-size:14px;
     }
 
 
-    .services-hero-actions{
-
+    .hero-buttons{
         flex-direction:column;
     }
 
 
-    .services-primary-btn,
-    .services-secondary-btn{
-
+    .hero-primary,
+    .hero-secondary{
         width:100%;
     }
 
 
-    .service-navigation-section{
-
-        padding:
-        55px
-        18px
-        35px;
+    .service-navigation{
+        padding:55px 18px 40px;
     }
 
 
-    .service-navigation-intro h2{
-
+    .service-nav-heading h2{
         font-size:28px;
     }
 
 
     .service-tabs{
-
         display:grid;
+        grid-template-columns:1fr 1fr;
+    }
 
-        grid-template-columns:
-        repeat(2,1fr);
+
+    .service-tab{
+        text-align:center;
+        padding:11px 10px;
     }
 
 
     .service-tab:first-child{
-
         grid-column:1 / -1;
     }
 
 
-    .service-overview{
-
-        padding:
-        50px
-        18px
-        65px;
+    .services-introduction{
+        padding:45px 18px 65px;
     }
 
 
-    .service-overview-grid{
-
+    .overview-grid{
         grid-template-columns:1fr;
     }
 
 
-    .service-category-section{
-
-        padding:
-        65px
-        18px;
-    }
-
-
-    .category-heading{
-
-        align-items:flex-start;
-
-        flex-direction:column;
-    }
-
-
-    .category-heading h2{
-
+    .section-heading h2{
         font-size:28px;
     }
 
 
-    .service-card-grid{
+    .service-category{
+        padding:65px 18px;
+    }
 
+
+    .category-heading{
+        flex-direction:column;
+        align-items:flex-start;
+
+        gap:18px;
+    }
+
+
+    .category-heading h2{
+        font-size:28px;
+    }
+
+
+    .service-grid{
         grid-template-columns:1fr;
     }
 
 
-    .services-why{
-
-        padding:
-        70px
-        18px;
+    .why-container{
+        gap:35px;
     }
 
 
-    .services-why-copy h2{
-
+    .why-copy h2{
         font-size:29px;
     }
 
 
-    .services-benefits{
-
+    .why-grid{
         grid-template-columns:1fr;
     }
 
 
-    .services-process{
-
-        padding:
-        65px
-        18px;
-    }
-
-
-    .services-process-grid{
-
-        grid-template-columns:1fr;
+    .services-cta-wrap{
+        padding:45px 18px;
     }
 
 
     .services-cta{
-
-        margin:
-        15px
-        18px
-        50px;
-
-        padding:
-        32px
-        22px;
+        padding:32px 22px;
     }
 
 
     .services-cta h2{
-
         font-size:25px;
     }
 
 
-    .services-cta-buttons{
-
+    .cta-buttons{
         width:100%;
-
         flex-direction:column;
     }
 
 
-    .services-cta-primary,
-    .services-cta-secondary{
-
+    .cta-fleet,
+    .cta-whatsapp{
         width:100%;
-
         text-align:center;
     }
 
-}
-/* ==========================================
-   JS CARD ANIMATIONS
-========================================== */
-
-.service-card-hidden{
-    opacity:0;
-    transform:translateY(25px);
-}
-
-.service-card-visible{
-    opacity:1;
-    transform:translateY(0);
-
-    transition:
-        opacity .6s ease,
-        transform .6s ease;
 }
