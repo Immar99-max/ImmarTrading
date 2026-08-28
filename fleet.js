@@ -50,33 +50,33 @@ document.getElementById("increaseDays");
 const vehicleRates = {
 
     "Executive Sedan":{
-        local:500,
-        intercity:1200
-    },
-
-    "Executive SUV":{
-        local:700,
-        intercity:1500
-    },
-
-    "Family SUV":{
-        local:650,
-        intercity:1400
-    },
-
-    "Double Cab Pickup":{
-        local:800,
-        intercity:1800
-    },
-
-    "Passenger Minibus":{
         local:1500,
         intercity:2500
     },
 
+    "Executive SUV":{
+        local:1500,
+        intercity:2500
+    },
+
+    "Family SUV":{
+        local:1500,
+        intercity:2500
+    },
+
+    "Double Cab Pickup":{
+        local:2500,
+        intercity:3500
+    },
+
+    "Passenger Minibus":{
+        local:2000,
+        intercity:3500
+    },
+
     "Budget Friendly":{
-        local:500,
-        intercity:1200
+        local:550,
+        intercity:1100
     }
 
 };
