@@ -1,347 +1,289 @@
 /* ==========================================
-   IMMAR TRADING SERVICES PAGE JS
+   IMMAR TRADING - SERVICES PAGE
 ========================================== */
 
 
 /* ==========================================
-   MOBILE MENU
+   SERVICE TABS
 ========================================== */
 
-
-const menuToggle = document.getElementById("menu-toggle");
-
-const navLinks = document.getElementById("nav-links");
+const serviceTabs =
+document.querySelectorAll(".service-tab");
 
 
-if(menuToggle && navLinks){
-
-
-    menuToggle.addEventListener("click",()=>{
-
-
-        navLinks.classList.toggle("active");
-
-
-    });
-
-
-
-    document
-    .querySelectorAll(".nav-links a")
-    .forEach(link=>{
-
-
-        link.addEventListener("click",()=>{
-
-
-            navLinks.classList.remove("active");
-
-
-        });
-
-
-    });
-
-
-}
-
-
-
-
-
-/* ==========================================
-   SERVICE TAB FILTERING
-========================================== */
-
-
-const tabs = document.querySelectorAll(".tab");
-
-const serviceCards = document.querySelectorAll(".service-card");
-
-
-
-/*
-Add category names to cards
-*/
-
-const serviceCategories = {
-
-
-    "Executive Vehicle Hire":"corporate",
-
-    "SUV & 4x4 Hire":"travel",
-
-    "Corporate Transport Solutions":"corporate",
-
-    "Airport Transfers":"travel",
-
-    "Intercity & Long Distance Travel":"travel",
-
-    "Mining & Industrial Transport":"projects",
-
-    "Events & Special Occasions":"events",
-
-    "Chauffeur Services":"corporate"
-
-
-};
-
-
-
-serviceCards.forEach(card=>{
-
-
-    const title =
-    card.querySelector("h3").innerText;
-
-
-    card.dataset.category =
-    serviceCategories[title] || "all";
-
-
-});
-
-
-
-
-
-
-tabs.forEach(tab=>{
-
+serviceTabs.forEach(tab=>{
 
     tab.addEventListener("click",()=>{
 
 
         /*
-        Remove active class
+           Update active tab.
         */
 
+        serviceTabs.forEach(item=>{
 
-        tabs.forEach(button=>{
-
-
-            button.classList.remove("active");
-
+            item.classList.remove("active");
 
         });
-
 
 
         tab.classList.add("active");
 
 
+        /*
+           Find section.
+        */
 
-        const selected =
-        tab.innerText.toLowerCase();
-
-
-
-
-        serviceCards.forEach(card=>{
+        const targetId =
+        tab.dataset.target;
 
 
-            const category =
-            card.dataset.category;
+        const targetSection =
+        document.getElementById(targetId);
 
 
+        if(!targetSection){
 
-            if(
-                selected.includes("all") ||
-                selected.includes(category)
-            ){
+            return;
 
-
-                card.style.display="block";
+        }
 
 
-            }
+        /*
+           Scroll smoothly.
+        */
 
-            else{
+        targetSection.scrollIntoView({
 
+            behavior:"smooth",
 
-                card.style.display="none";
-
-
-            }
-
+            block:"start"
 
         });
 
 
-    });
+        /*
+           Briefly highlight the destination.
+        */
+
+        if(
+            targetId !== "allServices"
+        ){
+
+            targetSection
+            .classList
+            .remove("tab-highlight");
 
 
-});
+            /*
+               Restart animation.
+            */
+
+            void targetSection.offsetWidth;
 
 
+            targetSection
+            .classList
+            .add("tab-highlight");
 
 
+            setTimeout(()=>{
 
+                targetSection
+                .classList
+                .remove(
+                    "tab-highlight"
+                );
 
-/* ==========================================
-   CARD ANIMATION
-========================================== */
-
-
-const cards =
-document.querySelectorAll(".service-card");
-
-
-
-if("IntersectionObserver" in window){
-
-
-const observer =
-
-new IntersectionObserver(entries=>{
-
-
-    entries.forEach(entry=>{
-
-
-        if(entry.isIntersecting){
-
-
-            entry.target.classList.add("show");
-
-
-            observer.unobserve(entry.target);
-
+            },1500);
 
         }
 
-
     });
 
-
-},{
-
-
-    threshold:0.15
-
-
 });
 
 
+/* ==========================================
+   UPDATE TAB WHILE SCROLLING
+========================================== */
 
-cards.forEach(card=>{
+const trackedSections = [
+
+    {
+        id:"corporateServices",
+        tab:"corporateServices"
+    },
+
+    {
+        id:"travelServices",
+        tab:"travelServices"
+    },
+
+    {
+        id:"projectServices",
+        tab:"projectServices"
+    },
+
+    {
+        id:"eventServices",
+        tab:"eventServices"
+    }
+
+];
 
 
-    card.classList.add("hidden");
+if(
+    "IntersectionObserver" in window
+){
+
+    const sectionObserver =
+
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(
+                    !entry.isIntersecting
+                ){
+
+                    return;
+
+                }
 
 
-    observer.observe(card);
+                const id =
+                entry.target.id;
 
 
-});
+                const matchingTab =
+                document.querySelector(
+                    `.service-tab[data-target="${id}"]`
+                );
 
+
+                if(!matchingTab){
+
+                    return;
+
+                }
+
+
+                serviceTabs.forEach(tab=>{
+
+                    tab.classList
+                    .remove("active");
+
+                });
+
+
+                matchingTab
+                .classList
+                .add("active");
+
+            });
+
+        },
+
+        {
+
+            threshold:0.30
+
+        }
+
+    );
+
+
+    trackedSections.forEach(item=>{
+
+        const section =
+        document.getElementById(
+            item.id
+        );
+
+
+        if(section){
+
+            sectionObserver
+            .observe(section);
+
+        }
+
+    });
 
 }
 
 
-
-
-
-
-
 /* ==========================================
-   SMOOTH SCROLL FOR INTERNAL LINKS
+   CARD ENTRANCE ANIMATION
 ========================================== */
 
-
-document
-.querySelectorAll('a[href^="#"]')
-.forEach(link=>{
-
-
-    link.addEventListener("click",function(e){
+const serviceCards =
+document.querySelectorAll(
+    ".detailed-service-card"
+);
 
 
-        const target =
-        document.querySelector(
-            this.getAttribute("href")
-        );
+if(
+    "IntersectionObserver" in window
+){
+
+    const cardObserver =
+
+    new IntersectionObserver(
+
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(
+                    entry.isIntersecting
+                ){
+
+                    entry.target
+                    .classList
+                    .add(
+                        "service-card-visible"
+                    );
 
 
-        if(target){
+                    cardObserver
+                    .unobserve(
+                        entry.target
+                    );
 
-
-            e.preventDefault();
-
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
+                }
 
             });
 
+        },
+
+        {
+
+            threshold:0.12
 
         }
 
+    );
+
+
+    serviceCards.forEach(card=>{
+
+        card.classList.add(
+            "service-card-hidden"
+        );
+
+
+        cardObserver
+        .observe(card);
 
     });
 
-
-});
-
-
-
-
+}
 
 
 /* ==========================================
-   WHATSAPP SERVICE REQUEST
+   END
 ========================================== */
-
-
-document
-.querySelectorAll(".service-card a")
-.forEach(button=>{
-
-
-    button.addEventListener("click",function(){
-
-
-        const service =
-        this.closest(".service-card")
-        .querySelector("h3")
-        .innerText;
-
-
-
-        if(this.href.includes("#contact")){
-
-
-            const message =
-
-`Hello Immar Trading,
-
-I would like to enquire about:
-
-${service}
-
-Please provide more information.
-
-Thank you.`;
-
-
-
-            this.href =
-
-            "https://wa.me/260977123456?text="
-
-            + encodeURIComponent(message);
-
-
-
-            this.target="_blank";
-
-
-        }
-
-
-
-    });
-
-
-});
